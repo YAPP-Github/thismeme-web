@@ -18,24 +18,11 @@ jobs:
     # Job steps
     steps:
       - uses: actions/checkout@v1
-      
-      - name: Caching dependencies
-        id: cache-dependencies
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.OS }}-build-
 
       - name: Install Dependencies
-        if: steps.cache-dependencies.output.cache-hit != 'true'
         run: yarn
         
-        #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@v1
-        # Options required for Chromatic's GitHub Action
         with:
-          #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/intro-to-storybook/react/en/deploy/ to obtain it
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
