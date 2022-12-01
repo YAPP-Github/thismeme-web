@@ -3,7 +3,6 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
 
 # testing
 /coverage
@@ -33,7 +32,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # webstorm
 .idea
@@ -46,3 +44,4 @@ next-env.d.ts
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+!.yarn/unplugged

@@ -10485,7 +10485,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["core-js", [\
         ["npm:3.26.1", {\
-          "packageLocation": "./.yarn/unplugged/core-js-npm-3.26.1-42575888f8/node_modules/core-js/",\
+          "packageLocation": "./.yarn/cache/core-js-npm-3.26.1-42575888f8-0a01149f51.zip/node_modules/core-js/",\
           "packageDependencies": [\
             ["core-js", "npm:3.26.1"]\
           ],\
@@ -10504,7 +10504,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["core-js-pure", [\
         ["npm:3.26.1", {\
-          "packageLocation": "./.yarn/unplugged/core-js-pure-npm-3.26.1-d78c7431c6/node_modules/core-js-pure/",\
+          "packageLocation": "./.yarn/cache/core-js-pure-npm-3.26.1-d78c7431c6-d88c40e5e2.zip/node_modules/core-js-pure/",\
           "packageDependencies": [\
             ["core-js-pure", "npm:3.26.1"]\
           ],\
