@@ -1,6 +1,11 @@
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { initialize, mswDecorator } from "msw-storybook-addon";
+import "@/styles/globals.css";
 
-export const decorators = [(Story) => <Story />];
+// Initialize MSW
+initialize();
+
+export const decorators = [mswDecorator, (Story) => <Story />];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
