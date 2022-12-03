@@ -1,6 +1,7 @@
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { initialize, mswDecorator } from "msw-storybook-addon";
 import "@/styles/globals.css";
+import { handlers } from "../mocks/handlers";
 
 // Initialize MSW
 initialize();
@@ -19,4 +20,9 @@ export const parameters = {
     viewports: INITIAL_VIEWPORTS,
   },
   layout: "fullscreen",
+  msw: {
+    handlers: {
+      handlers,
+    },
+  },
 };

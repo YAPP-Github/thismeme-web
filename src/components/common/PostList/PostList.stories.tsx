@@ -14,7 +14,7 @@ export default {
   },
 } as ComponentMeta<typeof PostList>;
 
-export const DefaultBehavior = () => <PostList />;
+// export const DefaultBehavior = () => <PostList />;
 
 const posts = [
   {
@@ -40,15 +40,15 @@ const posts = [
 const MockTemplate: ComponentStory<typeof PostList> = () => <PostList />;
 
 export const MockedSuccess = MockTemplate.bind({});
-MockedSuccess.parameters = {
-  msw: {
-    handlers: [
-      rest.get("https://jsonplaceholder.typicode.com/posts", (req, res, ctx) => {
-        return res(ctx.json(posts));
-      }),
-    ],
-  },
-};
+// MockedSuccess.parameters = {
+//   msw: {
+//     handlers: [
+//       rest.get("https://jsonplaceholder.typicode.com/posts", (req, res, ctx) => {
+//         return res(ctx.json(posts));
+//       }),
+//     ],
+//   },
+// };
 
 export const MockedError = MockTemplate.bind({});
 MockedError.parameters = {

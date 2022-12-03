@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 
 import { PostItem } from "@/components/common/PostList/PostItem";
-import type { Post } from "@/mocks/types";
+import type { Post } from "mocks/types";
 
 type HomeProps = {
   posts: Post[];
