@@ -3777,12 +3777,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/match-sorter-utils@npm:8.1.1":
-  version: 8.1.1
-  resolution: "@tanstack/match-sorter-utils@npm:8.1.1"
+"@tanstack/match-sorter-utils@npm:^8.7.0":
+  version: 8.7.0
+  resolution: "@tanstack/match-sorter-utils@npm:8.7.0"
   dependencies:
     remove-accents: 0.4.2
-  checksum: bf1458b7ca08cf79750ebd46fddef9c9b845ef55b5b69c0f7f69d48d6cbd73dbfd98763509f655298033b93cfc92b21d54f9f13a4d631cc68ca9191913967205
+  checksum: 7ec97963b44016acb324b1c6009efd87e724aa7d8caac360be7aa75c60cbbd707dffbadcbe4aad565764b591fe8d3ce725ce95f4f90b61c7e5df431e5946b3e5
   languageName: node
   linkType: hard
 
@@ -3793,18 +3793,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query-devtools@npm:^4.18.0":
-  version: 4.18.0
-  resolution: "@tanstack/react-query-devtools@npm:4.18.0"
+"@tanstack/react-query-devtools@npm:^4.19.1":
+  version: 4.19.1
+  resolution: "@tanstack/react-query-devtools@npm:4.19.1"
   dependencies:
-    "@tanstack/match-sorter-utils": 8.1.1
+    "@tanstack/match-sorter-utils": ^8.7.0
     superjson: ^1.10.0
     use-sync-external-store: ^1.2.0
   peerDependencies:
-    "@tanstack/react-query": 4.18.0
+    "@tanstack/react-query": 4.19.1
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: b8d12f194e545bb80f2e957d18ead2fd77baa3b641025fed37420b61da38f35314d1bca8e0fcefefef516d4440f824b51ad131a7997e5e39eec85f078da93054
+  checksum: 0c40e7b55d06600ff8a2448f8679e52657f22f05ae397ccee83842ee9ce6dcd681f41bd33606adc6590535bb868561dce3da631233c339701fffa602ec1e381c
   languageName: node
   linkType: hard
 
@@ -6725,11 +6725,11 @@ __metadata:
   linkType: hard
 
 "copy-anything@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "copy-anything@npm:3.0.2"
+  version: 3.0.3
+  resolution: "copy-anything@npm:3.0.3"
   dependencies:
-    is-what: ^4.1.6
-  checksum: 394491d62ab0c77c81616668bce51b91cf4e7b539bd530bb5b22c226151b0bc6122c01de21ffe46d5ec273f504fb34f6569f349ffb823fa814dddb8b27a4750c
+    is-what: ^4.1.8
+  checksum: d456dc5ec98dee7c7cf87d809eac30dc2ac942acd4cf970fab394e280ceb6dd7a8a7a5a44fcbcc50e0206658de3cc20b92863562f5797930bb2619f164f4c182
   languageName: node
   linkType: hard
 
@@ -10369,10 +10369,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-what@npm:^4.1.6":
-  version: 4.1.7
-  resolution: "is-what@npm:4.1.7"
-  checksum: aade39dcc45a209d6cb2f2d5dbcf0e63ed894aadbae37bd5693c64e9876a27632431b43fc9d9332ebf0795eddd2abc11a2d0f3c6fa41c36330616a645660530e
+"is-what@npm:^4.1.8":
+  version: 4.1.8
+  resolution: "is-what@npm:4.1.8"
+  checksum: b9bec3acff102d14ad467f4c74c9886af310fa160e07a63292c8c181e6768c7c4c1054644e13d67185b963644e4a513bce8c6b8ce3d3ca6f9488a69fccad5f97
   languageName: node
   linkType: hard
 
@@ -16628,7 +16628,7 @@ __metadata:
     "@svgr/webpack": ^6.5.1
     "@tanstack/eslint-plugin-query": ^4.15.1
     "@tanstack/react-query": ^4.19.1
-    "@tanstack/react-query-devtools": ^4.18.0
+    "@tanstack/react-query-devtools": ^4.19.1
     "@types/node": 18.11.9
     "@types/react": 18.0.25
     "@types/react-dom": 18.0.9
