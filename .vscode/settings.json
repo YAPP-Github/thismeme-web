@@ -8,8 +8,8 @@
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "eslint.codeActionsOnSave.mode": "all",
-  "eslint.run": "onType",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  }
+  "eslint.run": "onType"
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll": true
+  // }
 }
