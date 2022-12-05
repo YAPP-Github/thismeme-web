@@ -6,7 +6,6 @@ import { PostItem } from "@/components/common/PostList/PostItem";
 type HomeProps = {
   posts: Post[];
 };
-
 const Home: NextPage<HomeProps> = ({ posts }) => {
   const handleLogin = () => {
     // Client-side request are mocked by `mocks/browser.ts`.
@@ -14,6 +13,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       .then((res) => res.json())
       .then((user) => alert(`성공 !\n${user.nickname}, ${user.email}`));
   };
+
   return (
     <div>
       <div className="border bg-green-200 p-4">tailwindcss 테스트입니다.</div>
