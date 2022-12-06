@@ -12,9 +12,17 @@ export const RecentSearchChip = () => (
     무한도전
   </Chip>
 );
+
 export const TagChip = () => <Chip>박명수</Chip>;
+
 export const MajorTypeChip = () => (
-  <Chip padding={[7, 5, 14]} font="[12px]" borderRadius="[12px]" height="[24px]">
+  <Chip
+    height="24"
+    background="black"
+    padding={[7, 5, 14]}
+    font="label"
+    borderRadius="rounded-[12px]"
+  >
     예능별
   </Chip>
 );
