@@ -23,7 +23,7 @@
     "plugin:import/typescript",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["simple-import-sort", "@tanstack/query", "prettier"],
+  "plugins": ["simple-import-sort", "@tanstack/query"],
   "settings": {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"]

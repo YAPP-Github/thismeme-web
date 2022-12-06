@@ -1,5 +1,5 @@
 interface ChipProps {
-  padding?: number[] | any;
+  padding: number[];
   border?: string;
   height?: string;
   width?: string;
@@ -11,7 +11,7 @@ interface ChipProps {
 }
 
 //rem 으로 변경 필요
-export const Chip = ({
+export const Chips = ({
   padding,
   background,
   children,
@@ -32,13 +32,13 @@ export const Chip = ({
 };
 
 //13,8,18 "pl-[13px] pr-[13px] pt-[8px] pb-[8px] leading-[18px]"
-Chip.defaultProps = {
-  padding: [13, 8, 18],
-  borderRadius: "rounded-[16.5px]",
-  height: "34",
+Chips.defaultProps = {
   width: "w-fit",
 
   //칩마다 변경되는 부분
+  padding: [13, 8, 18],
+  borderRadius: "rounded-[16.5px]",
+  height: "34",
   font: "tag",
   background: "dark-gray-10",
   color: "white",

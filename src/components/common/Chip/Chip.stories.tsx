@@ -1,22 +1,22 @@
 import type { ComponentMeta } from "@storybook/react";
 
-import { Chip } from "./Chip";
+import { Chips } from "./Chip";
 
 export default {
   title: "Component/Common/Chip",
-  component: Chip,
-} as ComponentMeta<typeof Chip>;
+  component: Chips,
+} as ComponentMeta<typeof Chips>;
 
 export const RecentSearchChip = () => (
-  <Chip background="white" color="gray-20" border="border-solid border-[1px] border-gray-10">
+  <Chips background="white" color="gray-20" border="border-solid border-[1px] border-gray-10">
     무한도전
-  </Chip>
+  </Chips>
 );
 
-export const TagChip = () => <Chip>박명수</Chip>;
+export const TagChip = () => <Chips>박명수</Chips>;
 
 export const MajorTypeChip = () => (
-  <Chip
+  <Chips
     height="24"
     background="black"
     padding={[7, 5, 14]}
@@ -24,5 +24,5 @@ export const MajorTypeChip = () => (
     borderRadius="rounded-[12px]"
   >
     예능별
-  </Chip>
+  </Chips>
 );
