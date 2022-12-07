@@ -1,15 +1,14 @@
-import { Chips } from "./Chip";
+import { Chip } from "./Chip";
 
 interface ChipComponentProps {
-  text: string;
+  label: string;
+  handleClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
-function RecentSearchChip({ text }: ChipComponentProps) {
+function RecentSearchChip({ label, handleClick }: ChipComponentProps) {
   return (
     <>
-      <Chips background="white" color="gray-20" border="border-solid border-[1px] border-gray-10">
-        {text}
-      </Chips>
+      <Chip className={"basic medium recent-search-chip"} label={label} handleClick={handleClick} />
     </>
   );
 }

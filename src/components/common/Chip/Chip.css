@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .basic {
+    width: fit-content;
+  }
+  .small {
+    height: theme("spacing.24");
+    font-size: theme("fontSize.label[0]");
+    font-weight: theme("fontSize.label.1.fontWeight");
+    line-height: theme("spacing.14");
+    border-radius: theme("spacing.12");
+    padding: theme("spacing.5") theme("spacing.7");
+  }
+  .medium {
+    height: theme("spacing.36");
+    font-size: theme("fontSize.tag[0]");
+    font-weight: theme("fontSize.tag.1.fontWeight");
+    line-height: theme("spacing.18");
+    border-radius: theme("spacing.16");
+    padding: theme("spacing.8") theme("spacing.13");
+  }
+
+  .recent-search-chip {
+    color: theme("colors.gray-20");
+    background-color: theme("colors.white");
+    border: 1px solid theme("colors.gray-10");
+  }
+  .recommend-search-chip {
+    background-color: theme("colors.dark-gray-10");
+    color: theme("colors.white");
+  }
+  .major-type-chip {
+    background-color: theme("colors.black");
+    color: theme("colors.white");
+  }
+  /* ... */
+}

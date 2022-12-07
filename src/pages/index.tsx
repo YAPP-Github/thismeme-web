@@ -1,6 +1,7 @@
 import type { Post } from "mocks/types";
 import type { NextPage } from "next";
 
+import MajorTypeChip from "@/components/common/Chip/MajorTypeChip";
 import RecentSearchChip from "@/components/common/Chip/RecentSearchChip";
 import { PostItem } from "@/components/common/PostList/PostItem";
 
@@ -14,9 +15,10 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       .then((res) => res.json())
       .then((user) => alert(`성공 !\n${user.nickname}, ${user.email}`));
   };
-
   return (
     <div>
+      <RecentSearchChip label="무한도전" handleClick={() => console.log("1")} />
+      <MajorTypeChip label="예능별" handleClick={() => console.log("1")} />
       <button onClick={handleLogin}>Login(Click Me)</button>
       <div className="text-header">tailwindcss 테스트입니다.</div>
       <div className="text-title">tailwindcss 테스트입니다.</div>
@@ -25,8 +27,6 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       <div className="text-semi-bold">tailwindcss 테스트입니다.</div>
       <div className="text-label">tailwindcss 테스트입니다.</div>
       <div className="text-sm">tailwindcss 테스트입니다.</div>
-      <div className="pl-13 pr-13 pt-8 pb-8"></div>
-      <RecentSearchChip text={"무한도전"} />
       <div className="flex gap-2">
         <div className="h-10 w-10 bg-light-gray-10"></div>
         <div className="h-10 w-10 bg-light-gray-20"></div>

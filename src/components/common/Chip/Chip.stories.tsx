@@ -1,28 +1,35 @@
+import "./Chip.css";
+
 import type { ComponentMeta } from "@storybook/react";
 
-import { Chips } from "./Chip";
+import { Chip } from "./Chip";
 
 export default {
   title: "Component/Common/Chip",
-  component: Chips,
-} as ComponentMeta<typeof Chips>;
+  component: Chip,
+} as ComponentMeta<typeof Chip>;
 
+//현재는 사이즈(medium,small)만 분리 ! 디자인 시스템 구축 후 더욱 세분화 될 예정
 export const RecentSearchChip = () => (
-  <Chips background="white" color="gray-20" border="border-solid border-[1px] border-gray-10">
-    무한도전
-  </Chips>
+  <Chip
+    className={"basic medium recent-search-chip"}
+    label={"무한도전"}
+    handleClick={() => console.log("")}
+  />
 );
 
-export const TagChip = () => <Chips>박명수</Chips>;
+export const RecommendChip = () => (
+  <Chip
+    className={"basic medium recommend-search-chip"}
+    label={"박명수"}
+    handleClick={() => console.log("")}
+  />
+);
 
 export const MajorTypeChip = () => (
-  <Chips
-    height="24"
-    background="black"
-    padding={[7, 5, 14]}
-    font="label"
-    borderRadius="rounded-[12px]"
-  >
-    예능별
-  </Chips>
+  <Chip
+    className={"basic small major-type-chip"}
+    label={"예능별"}
+    handleClick={() => console.log("")}
+  />
 );
