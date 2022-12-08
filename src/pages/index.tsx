@@ -1,7 +1,7 @@
 import type { Post } from "mocks/types";
 import type { NextPage } from "next";
 
-import RecentSearchChip from "@/components/common/Chip/RecentSearchChip";
+import { Chip } from "@/components/common/Chip/Chip";
 import Navigation from "@/components/common/Navigation";
 import { PostItem } from "@/components/common/PostList/PostItem";
 
@@ -17,7 +17,14 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
   };
   return (
     <div>
-      <RecentSearchChip label="무한도전" handleClick={() => console.log("1")} />
+      <Chip
+        label="무한도전"
+        type="recent"
+        size="medium"
+        onClick={() => {
+          console.log(2);
+        }}
+      />
       <Navigation page="intro" />
       <Navigation page="search" />
       <Navigation page="result" />

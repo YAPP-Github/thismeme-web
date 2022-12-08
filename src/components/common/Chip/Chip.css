@@ -3,23 +3,20 @@
 @tailwind utilities;
 
 @layer components {
-  .basic {
-    width: fit-content;
-  }
-  .small {    
-    @apply w-fit h-24 text-label rounded-[1.2rem] pl-7 pr-7 pt-5 pb-5;
+  .small {
+    @apply h-24 w-fit rounded-[1.2rem] pl-7 pr-7 pt-5 pb-5 text-label;
   }
   .medium {
-    @apply w-fit h-36 text-tag rounded-[1.6rem] pl-13 pr-13 pt-8 pb-8;
+    @apply h-36 w-fit rounded-[1.6rem] pl-13 pr-13 pt-8 pb-8 text-tag;
   }
 
-  .recent-search-chip {
-    @apply text-gray-20 bg-white border-[1px] border-gray-10;
+  .recent {
+    @apply border-[1px] border-gray-10 bg-white text-gray-20;
   }
-  .recommend-search-chip {
+  .recommend {
     @apply bg-dark-gray-10 text-white;
   }
-  .major-type-chip {
+  .major {
     @apply bg-black text-white;
   }
   /* ... */
