@@ -12,7 +12,7 @@ export default {
 //현재는 사이즈(medium,small)만 분리 ! 디자인 시스템 구축 후 더욱 세분화 될 예정
 export const RecentSearchChip = () => (
   <Chip
-    className={"basic medium recent-search-chip"}
+    className={"medium recent-search-chip"}
     label={"무한도전"}
     handleClick={() => console.log("")}
   />
@@ -20,16 +20,12 @@ export const RecentSearchChip = () => (
 
 export const RecommendChip = () => (
   <Chip
-    className={"basic medium recommend-search-chip"}
+    className={"medium recommend-search-chip"}
     label={"박명수"}
     handleClick={() => console.log("")}
   />
 );
 
 export const MajorTypeChip = () => (
-  <Chip
-    className={"basic small major-type-chip"}
-    label={"예능별"}
-    handleClick={() => console.log("")}
-  />
+  <Chip className={"small major-type-chip"} label={"예능별"} handleClick={() => console.log("")} />
 );

@@ -1,8 +1,8 @@
 import type { Post } from "mocks/types";
 import type { NextPage } from "next";
 
-import MajorTypeChip from "@/components/common/Chip/MajorTypeChip";
 import RecentSearchChip from "@/components/common/Chip/RecentSearchChip";
+import Navigation from "@/components/common/Navigation";
 import { PostItem } from "@/components/common/PostList/PostItem";
 
 type HomeProps = {
@@ -18,7 +18,11 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
     <div>
       <RecentSearchChip label="무한도전" handleClick={() => console.log("1")} />
-      <MajorTypeChip label="예능별" handleClick={() => console.log("1")} />
+      <Navigation page="intro" />
+      <Navigation page="search" />
+      <Navigation page="result" />
+      test test
+      <span>test</span>
       <button onClick={handleLogin}>Login(Click Me)</button>
       <div className="text-header">tailwindcss 테스트입니다.</div>
       <div className="text-title">tailwindcss 테스트입니다.</div>

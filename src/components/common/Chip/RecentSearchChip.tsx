@@ -8,7 +8,7 @@ interface ChipComponentProps {
 function RecentSearchChip({ label, handleClick }: ChipComponentProps) {
   return (
     <>
-      <Chip className={"basic medium recent-search-chip"} label={label} handleClick={handleClick} />
+      <Chip className={"medium recent-search-chip"} label={label} handleClick={handleClick} />
     </>
   );
 }

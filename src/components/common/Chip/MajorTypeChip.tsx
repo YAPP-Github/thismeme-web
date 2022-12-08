@@ -8,7 +8,7 @@ interface ChipComponentProps {
 function MajorTypeChip({ label, handleClick }: ChipComponentProps) {
   return (
     <>
-      <Chip className={"basic small major-type-chip"} label={label} handleClick={handleClick} />
+      <Chip className={"small major-type-chip"} label={label} handleClick={handleClick} />
     </>
   );
 }

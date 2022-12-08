@@ -6,35 +6,21 @@
   .basic {
     width: fit-content;
   }
-  .small {
-    height: theme("spacing.24");
-    font-size: theme("fontSize.label[0]");
-    font-weight: theme("fontSize.label.1.fontWeight");
-    line-height: theme("spacing.14");
-    border-radius: theme("spacing.12");
-    padding: theme("spacing.5") theme("spacing.7");
+  .small {    
+    @apply w-fit h-24 text-label rounded-[1.2rem] pl-7 pr-7 pt-5 pb-5;
   }
   .medium {
-    height: theme("spacing.36");
-    font-size: theme("fontSize.tag[0]");
-    font-weight: theme("fontSize.tag.1.fontWeight");
-    line-height: theme("spacing.18");
-    border-radius: theme("spacing.16");
-    padding: theme("spacing.8") theme("spacing.13");
+    @apply w-fit h-36 text-tag rounded-[1.6rem] pl-13 pr-13 pt-8 pb-8;
   }
 
   .recent-search-chip {
-    color: theme("colors.gray-20");
-    background-color: theme("colors.white");
-    border: 1px solid theme("colors.gray-10");
+    @apply text-gray-20 bg-white border-[1px] border-gray-10;
   }
   .recommend-search-chip {
-    background-color: theme("colors.dark-gray-10");
-    color: theme("colors.white");
+    @apply bg-dark-gray-10 text-white;
   }
   .major-type-chip {
-    background-color: theme("colors.black");
-    color: theme("colors.white");
+    @apply bg-black text-white;
   }
   /* ... */
 }
