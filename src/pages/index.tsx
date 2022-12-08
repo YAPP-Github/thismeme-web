@@ -1,7 +1,7 @@
 import type { Post } from "mocks/types";
 import type { NextPage } from "next";
 
-import { Chip } from "@/components/common/Chip/Chip";
+import { Chip } from "@/components/common/Chip";
 import Navigation from "@/components/common/Navigation";
 import { PostItem } from "@/components/common/PostList/PostItem";
 
