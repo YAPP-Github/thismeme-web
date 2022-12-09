@@ -5,7 +5,7 @@ import type { ComponentMeta } from "@storybook/react";
 import { Chip } from ".";
 
 export default {
-  title: "Component/Common/Chip",
+  title: "components/common/Chip",
   component: Chip,
 } as ComponentMeta<typeof Chip>;
 

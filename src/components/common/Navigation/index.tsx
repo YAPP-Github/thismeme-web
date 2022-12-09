@@ -6,10 +6,12 @@ import Logo from "/public/icon/logo.svg";
 import SideMenu from "/public/icon/menu.svg";
 import Profile from "/public/icon/mockProfile.svg";
 
+import Input from "../Input";
+
 interface Props {
   page: "intro" | "search" | "result";
   left?: ReactNode;
-  title?: string;
+  title?: ReactNode | string;
   right?: ReactNode;
 }
 
@@ -29,12 +31,8 @@ const NAVIGATION_PROPS: { [key in Props["page"]]: Omit<Props, "page"> } = {
     right: <Delete />,
   },
   result: {
-    left: (
-      <>
-        <Back />
-        <div className={"w-full"}>search...</div>
-      </>
-    ),
+    left: <Back />,
+    title: <Input size="small" placeholder="ex) 네비게이션 검색바 테스트" isDelete={false} />,
     right: (
       <>
         <Profile />
