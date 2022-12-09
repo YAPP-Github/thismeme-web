@@ -1,12 +1,12 @@
 import { useState } from "react";
 
+import useInput from "@/application/hooks/common/useInput";
 import Input from "@/components/common/Input";
 import Navigation from "@/components/common/Navigation";
 
 function SearchPage() {
-  const handleSearch = () => {
-    console.log(1);
-  };
+  const { value, setValue, handleSearch } = useInput();
+
   return (
     <>
       <Navigation page="search" />
