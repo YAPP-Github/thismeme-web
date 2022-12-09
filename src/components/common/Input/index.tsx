@@ -13,8 +13,8 @@ const Input = ({ size, isDelete, placeholder, ...rest }: InputProps) => {
     small: "rounded-[1.6rem]",
     medium: "rounded-[2.1rem]",
   };
-
   const sized = STYLE[size];
+
   return (
     <label className="relative mx-4 flex justify-start">
       <input
