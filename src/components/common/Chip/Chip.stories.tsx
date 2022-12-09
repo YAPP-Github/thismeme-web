@@ -2,7 +2,7 @@ import "./Chip.css";
 
 import type { ComponentMeta } from "@storybook/react";
 
-import { Chip } from ".";
+import Chip from ".";
 
 export default {
   title: "components/common/Chip",
