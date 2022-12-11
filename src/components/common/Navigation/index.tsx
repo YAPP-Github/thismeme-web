@@ -32,7 +32,6 @@ const NAVIGATION_PROPS: { [key in Props["page"]]: Omit<Props, "page"> } = {
   },
   result: {
     left: <Back />,
-    title: <Input size="small" placeholder="ex) 네비게이션 검색바 테스트" isDelete={false} />,
     right: (
       <>
         <Profile />
