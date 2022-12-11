@@ -18,6 +18,14 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
   };
   return (
     <div>
+      <Chip
+        label="무한도전"
+        type="recent"
+        size="medium"
+        onClick={() => {
+          console.log(2);
+        }}
+      />
       <Navigation page="intro" />
       <Navigation page="search" />
       <Navigation page="result" />

@@ -1,5 +1,4 @@
 import type { ChangeEvent, Dispatch, HTMLAttributes, SetStateAction } from "react";
-import { Context, useContext } from "react";
 
 interface Props extends HTMLAttributes<HTMLInputElement> {
   value?: string;
@@ -11,7 +10,7 @@ interface Props extends HTMLAttributes<HTMLInputElement> {
   isDelete?: boolean;
 }
 
-const SearchInput = ({ value, size, isDelete, placeholder, onChange, onReset, ...rest }: Props) => {
+function SearchInput({ value, size, isDelete, placeholder, onChange, onReset, ...rest }: Props) {
   //TODO : 검색 완료페이지에 검색창 padding 값이나 font-size 피그마에 없으므로 나중에 추가
   //css 가 많지 않아 따로 css 파일로 분리하지 않음
   const STYLE = {
@@ -38,6 +37,6 @@ const SearchInput = ({ value, size, isDelete, placeholder, onChange, onReset, ..
       <button className="absolute right-16">s</button>
     </label>
   );
-};
+}
 
 export default SearchInput;
