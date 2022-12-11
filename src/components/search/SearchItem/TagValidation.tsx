@@ -3,7 +3,7 @@ interface Props {
   searchText: string;
 }
 
-function TagValidation({ tagName, searchText }: Props) {
+function ColoredTag({ tagName, searchText }: Props) {
   const index = tagName.search(searchText); //문자 있는 지 없는 확인
   const validation = /([^가-힣a-z\x20])/i; //자음 모음 정규식
 
@@ -21,4 +21,4 @@ function TagValidation({ tagName, searchText }: Props) {
     </>
   );
 }
-export default TagValidation;
+export default ColoredTag;

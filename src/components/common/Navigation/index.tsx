@@ -6,8 +6,6 @@ import Logo from "/public/icon/logo.svg";
 import SideMenu from "/public/icon/menu.svg";
 import Profile from "/public/icon/mockProfile.svg";
 
-import Input from "../Input";
-
 interface Props {
   page: "intro" | "search" | "result";
   left?: ReactNode;
@@ -32,6 +30,7 @@ const NAVIGATION_PROPS: { [key in Props["page"]]: Omit<Props, "page"> } = {
   },
   result: {
     left: <Back />,
+    title: "검색어 들어갈 곳",
     right: (
       <>
         <Profile />

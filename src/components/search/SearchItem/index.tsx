@@ -2,7 +2,7 @@ import type { HTMLAttributes } from "react";
 
 import Chip from "@/components/common/Chip";
 
-import TagValidation from "./TagValidation";
+import ColoredTag from "./TagValidation";
 
 interface SearchItemProps extends HTMLAttributes<HTMLDivElement> {
   searchText: string;
@@ -16,7 +16,7 @@ export default function SearchItem({ searchText, tagName, majorType, ...rest }: 
   return (
     <div className="relative flex h-50 w-full items-center pl-11 pr-6 text-semi-bold" {...rest}>
       <span className="pr-10">search</span>
-      <TagValidation searchText={searchText} tagName={tagName} />
+      <ColoredTag searchText={searchText} tagName={tagName} />
       {majorType && (
         <Chip className="absolute right-6" label={majorType} type="major" size="small" />
       )}
