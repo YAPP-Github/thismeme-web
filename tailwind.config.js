@@ -9,6 +9,11 @@ module.exports = {
   theme: {
     extend: {
       spacing: PX0_300,
+      borderRadius: {
+        12: "1.2rem",
+        16: "1.6rem",
+        21: "2.1rem", //TODO: 일정한 디자인으로 추후 변경되어야 할 듯
+      },
       colors: {
         "light-gray-10": "#f6f6f6",
         "light-gray-20": "#eeeeee",
@@ -64,7 +69,7 @@ module.exports = {
         label: [
           "1.2rem",
           {
-            lineHeight: "1.4rem",
+            lineHeight: "1.4rem", //TODO: label tag lineheight 디자인 체크
             letterSpacing: "0em",
             fontWeight: "600",
           },

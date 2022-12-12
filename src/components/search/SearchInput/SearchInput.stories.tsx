@@ -7,5 +7,4 @@ export default {
   component: SearchInput,
 } as ComponentMeta<typeof SearchInput>;
 
-export const MediumSearch = () => <SearchInput placeholder="ex) 최고심" />;
-export const SmallSearch = () => <SearchInput placeholder="당신의 밈을 찾아보세요" />;
+export const SearchInputExample = () => <SearchInput placeholder="ex) 최고심" />;
