@@ -2,9 +2,9 @@ import type { Post } from "mocks/types";
 import type { NextPage } from "next";
 
 import Chip from "@/components/common/Chip";
-import SearchInput from "@/components/common/Input";
 import Navigation from "@/components/common/Navigation";
 import { PostItem } from "@/components/common/PostList/PostItem";
+import SearchInput from "@/components/search/SearchInput";
 
 type HomeProps = {
   posts: Post[];
@@ -23,7 +23,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       <Navigation page="result" />
       test test
       <span>test</span>
-      <SearchInput size="small" placeholder="ex) 네비게이션 검색바 테스트" isDelete={false} />
+      <SearchInput placeholder="ex) 네비게이션 검색바 테스트" />
       <button onClick={handleLogin}>Login(Click Me)</button>
       <div className="text-header">tailwindcss 테스트입니다.</div>
       <div className="text-title">tailwindcss 테스트입니다.</div>

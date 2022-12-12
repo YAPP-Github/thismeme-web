@@ -7,5 +7,5 @@ export default {
   component: Input,
 } as ComponentMeta<typeof Input>;
 
-export const MediumSearch = () => <Input size="medium" placeholder="ex) 최고심" isDelete={true} />;
-export const SmallSearch = () => <Input size="small" isDelete={false} />;
+export const MediumSearch = () => <Input placeholder="ex) 최고심" />;
+export const SmallSearch = () => <Input />;
