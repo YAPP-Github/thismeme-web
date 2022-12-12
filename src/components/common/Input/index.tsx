@@ -7,7 +7,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 function InputBase({ EndComponents, ...rest }: Props) {
   return (
     <>
-      <input spellCheck={false} {...rest} />
+      <input {...rest} />
       {EndComponents}
     </>
   );

@@ -9,7 +9,13 @@ function SearchPage() {
   return (
     <>
       <Navigation page="search" />
-      <SearchInput {...inputProps} placeholder="ex) 페페,총" onReset={inputProps.onReset} />
+      <SearchInput
+        {...inputProps}
+        placeholder="ex) 페페,총"
+        spellCheck={false}
+        type="text"
+        onReset={inputProps.onReset}
+      />
       <SearchItem searchText={inputProps.value} tagName="무한도전" majorType="예능별" />
       <SearchItem searchText={inputProps.value} tagName="무한" majorType="예능별" />
       <SearchItem searchText={inputProps.value} tagName="무한한도도전전" />
