@@ -16,7 +16,7 @@ module.exports = {
       borderRadius: {
         12: "1.2rem",
         16: "1.6rem",
-        21: "2.1rem", //TODO: 일정한 디자인으로 추후 변경되어야 할 듯
+        22: "2.2rem", //TODO: 일정한 디자인으로 추후 변경되어야 할 듯
       },
       colors: {
         "light-gray-10": "#f6f6f6",

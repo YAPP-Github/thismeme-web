@@ -8,9 +8,9 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 
 function SearchInput({ onReset, ...rest }: Props) {
   return (
-    <label className="relative mx-4 flex justify-start">
+    <div className="relative mx-4 flex justify-start">
       <InputBase
-        className={`h-43 w-full rounded-21 bg-light-gray-10 pl-22 text-semi-bold text-dark-gray-10 placeholder-gray-10 outline-none`}
+        className={`h-43 w-full rounded-22 bg-light-gray-10 pl-22 text-semi-bold text-dark-gray-10 placeholder-gray-10 outline-none`}
         {...rest}
         endComponents={
           <>
@@ -21,7 +21,7 @@ function SearchInput({ onReset, ...rest }: Props) {
           </>
         }
       />
-    </label>
+    </div>
   );
 }
 
