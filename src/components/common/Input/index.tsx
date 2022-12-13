@@ -1,14 +1,14 @@
 import type { InputHTMLAttributes, ReactNode } from "react";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  EndComponents?: ReactNode;
+  endComponents?: ReactNode;
 }
 
-function InputBase({ EndComponents, ...rest }: Props) {
+function InputBase({ endComponents, ...rest }: Props) {
   return (
     <>
       <input {...rest} />
-      {EndComponents}
+      {endComponents}
     </>
   );
 }

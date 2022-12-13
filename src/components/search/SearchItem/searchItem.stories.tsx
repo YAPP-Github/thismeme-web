@@ -7,7 +7,7 @@ export default {
   component: SearchItem,
 } as ComponentMeta<typeof SearchItem>;
 
-export const majoreSearch = () => (
+export const MajoreSearch = () => (
   <SearchItem searchText="축구" tagName="무한도전축구짤" majorType="예능별" />
 );
-export const notMajorSearch = () => <SearchItem searchText="무한" tagName="도전무한" />;
+export const NotMajorSearch = () => <SearchItem searchText="무한" tagName="도전무한" />;

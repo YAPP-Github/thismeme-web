@@ -1,7 +1,11 @@
-const useValidation = ({ text }: { text: string }) => {
-  const validation = /([^가-힣a-z\x20])/i; //자음 모음 정규식
+interface ValidationProps {
+  text: string;
+  regularValidation: RegExp;
+}
 
-  const checkValidation = !validation.test(text);
+const useValidation = ({ text, regularValidation }: ValidationProps) => {
+  //확장성을 고려하여 정규식을 props 로 받기
+  const checkValidation = !regularValidation.test(text);
 
   return { checkValidation };
 };

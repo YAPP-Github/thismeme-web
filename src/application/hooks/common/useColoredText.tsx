@@ -7,7 +7,10 @@ interface Props {
 
 const useColoredText = ({ tagName, searchText }: Props) => {
   const index = tagName.search(searchText); //문자 있는 지 없는 확인
-  const checkValidation = useValidation({ text: searchText });
+  const checkValidation = useValidation({
+    text: searchText,
+    regularValidation: /([^가-힣a-z\x20])/i, //나중에 체크할 정규식이 많아진다면 따로 파일로 분리해서 정리해도 조을듯!
+  });
 
   const ColoredText = () => {
     return (

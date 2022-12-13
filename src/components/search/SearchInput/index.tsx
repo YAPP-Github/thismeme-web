@@ -12,7 +12,7 @@ function SearchInput({ onReset, ...rest }: Props) {
       <InputBase
         className={`h-43 w-full rounded-21 bg-light-gray-10 pl-22 text-semi-bold text-dark-gray-10 placeholder-gray-10 outline-none`}
         {...rest}
-        EndComponents={
+        endComponents={
           <>
             <button className="absolute right-46" onClick={onReset}>
               x
