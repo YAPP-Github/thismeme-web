@@ -16,11 +16,11 @@ const useColoredText = ({ tagName, searchText }: Props) => {
     return (
       <>
         {checkValidation && index !== -1 ? (
-          <>
+          <div>
             <span>{tagName.slice(0, tagName.search(searchText))}</span>
             <span className="text-brand">{tagName.slice(index, index + searchText.length)}</span>
             <span>{tagName.slice(index + searchText.length)}</span>
-          </>
+          </div>
         ) : (
           <span>{tagName}</span>
         )}
