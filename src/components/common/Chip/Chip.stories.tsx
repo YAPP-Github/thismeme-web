@@ -1,5 +1,3 @@
-import "./Chip.css";
-
 import type { ComponentMeta } from "@storybook/react";
 
 import Chip from ".";
