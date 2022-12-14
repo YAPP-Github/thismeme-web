@@ -2,6 +2,7 @@ import type { HTMLAttributes } from "react";
 
 import { useColoredText } from "@/application/hooks/common/useColoredText";
 import Chip from "@/components/common/Chip";
+import Icon from "@/components/common/Icon";
 
 interface SearchItemProps extends HTMLAttributes<HTMLDivElement> {
   searchText: string;
@@ -15,7 +16,7 @@ export default function SearchItem({ searchText, tagName, majorType, ...rest }: 
 
   return (
     <div className="relative flex h-50 w-full items-center pl-11 pr-6 text-semi-bold" {...rest}>
-      <span className="pr-10">search</span>
+      <Icon name="search" className="mr-10" />
       {ColoredText}
       {majorType && (
         <Chip className="absolute right-6" label={majorType} type="major" size="small" />
