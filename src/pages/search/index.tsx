@@ -11,7 +11,7 @@ function SearchPage() {
       <Navigation page="search" />
       <SearchInput
         {...inputProps}
-        placeholder="ex) 페페,총"
+        placeholder="당신이 찾는 밈, 여기 있다."
         spellCheck={false}
         type="text"
         onReset={inputProps.onReset}
