@@ -4,10 +4,12 @@ import Icon from "@/components/common/Icon";
 import InputBase from "@/components/common/Input";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
+  text?: string;
   onReset?: () => void;
+  onSearch?: any;
 }
 
-function SearchInput({ onReset, ...rest }: Props) {
+function SearchInput({ text, onReset, onSearch, ...rest }: Props) {
   return (
     <div className="relative flex items-center justify-start">
       <InputBase
@@ -16,7 +18,13 @@ function SearchInput({ onReset, ...rest }: Props) {
         endComponents={
           <>
             <Icon name="delete" className="absolute right-46" onClick={onReset} />
-            <Icon name="search" className="absolute right-16" />
+            <Icon
+              name="search"
+              className="absolute right-16"
+              onClick={() => {
+                onSearch(text);
+              }}
+            />
           </>
         }
       />

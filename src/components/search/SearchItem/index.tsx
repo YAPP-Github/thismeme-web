@@ -16,7 +16,7 @@ export default function SearchItem({ searchText, tagName, majorType, ...rest }: 
 
   return (
     <div className="relative flex h-50 w-full items-center pl-11 pr-6 text-semi-bold" {...rest}>
-      <Icon name="search" className="mr-11" />
+      <Icon name="search" className="mr-10" />
       {ColoredText}
       {majorType && (
         <Chip className="absolute right-6" label={majorType} type="major" size="small" />
