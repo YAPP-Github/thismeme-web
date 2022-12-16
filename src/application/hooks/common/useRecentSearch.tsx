@@ -28,12 +28,11 @@ const useRecentSearch = () => {
     setKeywords([newKeyword, ...keywords.filter((keyword) => keyword.text !== text)]); //중복된 검색어 필터링
   };
 
-  const handleClearKeywords = () => {
+  const handleDeleteKeywords = () => {
     setKeywords([]);
-    localStorage.removeItem("recentSearch");
   };
 
-  return { keywords, handleAddKeyword };
+  return { keywords, handleAddKeyword, handleDeleteKeywords };
 };
 
 export default useRecentSearch;

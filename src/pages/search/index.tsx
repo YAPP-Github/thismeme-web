@@ -7,7 +7,7 @@ import SearchInput from "@/components/search/SearchInput";
 
 function SearchPage() {
   const inputProps = useInput();
-  const { keywords, handleAddKeyword } = useRecentSearch();
+  const { keywords, handleAddKeyword, handleDeleteKeywords } = useRecentSearch();
 
   return (
     <>
@@ -22,7 +22,16 @@ function SearchPage() {
         onSearch={handleAddKeyword}
       />
       {!inputProps.value ? (
-        <>
+        <div className="px-14">
+          <div className="flex justify-between">
+            <span className="text-semi-bold text-[1.4rem] text-dark-gray-10">최근 검색어</span>
+            <span
+              className="text-semi-bold text-[1.4rem] text-gray-10"
+              onClick={handleDeleteKeywords}
+            >
+              지우기
+            </span>
+          </div>
           <div className="flex flex-wrap align-middle">
             {keywords.map((keyword) => (
               <Chip
@@ -34,7 +43,7 @@ function SearchPage() {
               />
             ))}
           </div>
-        </>
+        </div>
       ) : (
         <SearchResult value={inputProps.value} handleAddKeyWord={handleAddKeyword} />
       )}
