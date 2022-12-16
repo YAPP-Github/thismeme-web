@@ -2,8 +2,8 @@ import useInput from "@/application/hooks/common/useInput";
 import useRecentSearch from "@/application/hooks/common/useRecentSearch";
 import Chip from "@/components/common/Chip";
 import Navigation from "@/components/common/Navigation";
+import SearchResult from "@/components/search/SearchBottom/SearchResult";
 import SearchInput from "@/components/search/SearchInput";
-import SearchItem from "@/components/search/SearchItem";
 
 function SearchPage() {
   const inputProps = useInput();
@@ -24,37 +24,19 @@ function SearchPage() {
       {!inputProps.value ? (
         <>
           <div className="flex flex-wrap align-middle">
-            {keywords.map((item: any) => (
-              <Chip key={item.id} label={item.text} type="recent" size="medium" className="m-4" />
+            {keywords.map((keyword) => (
+              <Chip
+                key={keyword.id}
+                label={keyword.text}
+                type="recent"
+                size="medium"
+                className="m-4"
+              />
             ))}
           </div>
         </>
       ) : (
-        <>
-          <SearchItem
-            searchText={inputProps.value}
-            tagName="무한도전"
-            majorType="예능별"
-            onClick={() => {
-              handleAddKeyword("무한도전");
-            }}
-          />
-          <SearchItem
-            searchText={inputProps.value}
-            tagName="무한"
-            majorType="예능별"
-            onClick={() => {
-              handleAddKeyword("무한");
-            }}
-          />
-          <SearchItem
-            searchText={inputProps.value}
-            tagName="무한한도도전전"
-            onClick={() => {
-              handleAddKeyword("무한한도도전전");
-            }}
-          />
-        </>
+        <SearchResult value={inputProps.value} handleAddKeyWord={handleAddKeyword} />
       )}
     </>
   );

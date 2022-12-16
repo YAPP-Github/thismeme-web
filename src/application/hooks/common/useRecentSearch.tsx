@@ -25,11 +25,7 @@ const useRecentSearch = () => {
       id: Date.now(),
       text: text,
     };
-
-    setKeywords([newKeyword, ...keywords]);
-    const checkSearchItem = localStorage.getItem("recentSearch") || "[]";
-    console.log(localStorage.getItem("recentSearch"));
-    localStorage.setItem("recentSearch", checkSearchItem + newKeyword);
+    setKeywords([newKeyword, ...keywords.filter((keyword) => keyword.text !== text)]); //중복된 검색어 필터링
   };
 
   const handleClearKeywords = () => {
