@@ -18,8 +18,7 @@ export const useSearchResult = (value: string) => {
     queryFn: () => getRecentSearch(value),
     suspense: false,
     onSuccess: (data) => {
-      setSearchResults(data.results);
-      //data.tags.length && setSearchResults(data.tags);
+      data.tags.length && setSearchResults(data.tags); //tag가 없는 경우 setSearch 가 일어나지 않음(기존의 결과 보여줌)
     },
   });
 
