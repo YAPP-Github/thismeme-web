@@ -1,6 +1,6 @@
 import { useSearchResult } from "@/application/hooks/api/search";
 
-import SearchItem from "../SearchItem";
+import { SearchItem } from "../SearchItem";
 
 interface Prop {
   value: string;
@@ -17,9 +17,9 @@ export const SearchResult = ({ value, handleAddKeyWord, ...rest }: Prop) => {
       {searchResults.map((searchResult) => (
         <SearchItem
           key={searchResult.tagId}
+          majorType={searchResult.categoryName}
           searchText={value}
           tagName={searchResult.name}
-          majorType={searchResult.categoryName}
           onClick={() => {
             handleAddKeyWord(searchResult.name);
           }}

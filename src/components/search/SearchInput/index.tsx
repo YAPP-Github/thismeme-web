@@ -1,15 +1,15 @@
 import type { InputHTMLAttributes } from "react";
 
-import Icon from "@/components/common/Icon";
-import InputBase from "@/components/common/Input";
+import { Icon } from "@/components/common/Icon";
+import { InputBase } from "@/components/common/Input";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   text?: string;
   onReset?: () => void;
-  onSearch?: any;
+  onSearch?: (text: string) => void;
 }
 
-function SearchInput({ text, onReset, onSearch, ...rest }: Props) {
+export const SearchInput = ({ text, onReset, onSearch, ...rest }: Props) => {
   return (
     <div className="relative flex items-center justify-start">
       <InputBase
@@ -17,19 +17,19 @@ function SearchInput({ text, onReset, onSearch, ...rest }: Props) {
         {...rest}
         endComponents={
           <>
-            <Icon name="delete" className="absolute right-46" onClick={onReset} />
-            <Icon
-              name="search"
-              className="absolute right-16"
-              onClick={() => {
-                onSearch(text);
-              }}
-            />
+            <Icon className="absolute right-46" name="delete" onClick={onReset} />
+            {text && onSearch && (
+              <Icon
+                className="absolute right-16"
+                name="search"
+                onClick={() => {
+                  onSearch(text);
+                }}
+              />
+            )}
           </>
         }
       />
     </div>
   );
-}
-
-export default SearchInput;
+};

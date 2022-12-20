@@ -1,12 +1,12 @@
-import useInput from "@/application/hooks/common/useInput";
+import { useInput } from "@/application/hooks/common/useInput";
 import { useRecentSearch } from "@/application/hooks/common/useRecentSearch";
-import Navigation from "@/components/common/Navigation";
+import { Navigation } from "@/components/common/Navigation";
+import { SearchInput } from "@/components/search";
 import { SearchPopular } from "@/components/search/SearchBottom/SearchPopular";
 import { SearchRecent } from "@/components/search/SearchBottom/SearchRecent";
 import { SearchResult } from "@/components/search/SearchBottom/SearchResult";
-import SearchInput from "@/components/search/SearchInput";
 
-function SearchPage() {
+const SearchPage = () => {
   const inputProps = useInput();
   const { keywords, handleAddKeyword, handleDeleteKeywords } = useRecentSearch();
 
@@ -15,9 +15,9 @@ function SearchPage() {
       <Navigation page="search" />
       <SearchInput
         {...inputProps}
-        text={inputProps.value}
         placeholder="당신이 찾는 밈, 여기 있다."
         spellCheck={false}
+        text={inputProps.value}
         type="text"
         onReset={inputProps.onReset}
         onSearch={handleAddKeyword}
@@ -25,17 +25,17 @@ function SearchPage() {
       {!inputProps.value ? (
         keywords.length ? (
           <div className="px-14">
-            <SearchRecent keywords={keywords} handleDeleteKeywords={handleDeleteKeywords} />
+            <SearchRecent handleDeleteKeywords={handleDeleteKeywords} keywords={keywords} />
             <SearchPopular />
           </div>
         ) : (
           <SearchPopular />
         )
       ) : (
-        <SearchResult value={inputProps.value} handleAddKeyWord={handleAddKeyword} />
+        <SearchResult handleAddKeyWord={handleAddKeyword} value={inputProps.value} />
       )}
     </>
   );
-}
+};
 
 export default SearchPage;
