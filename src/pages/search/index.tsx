@@ -1,8 +1,8 @@
 import useInput from "@/application/hooks/common/useInput";
-import useRecentSearch from "@/application/hooks/common/useRecentSearch";
-import Chip from "@/components/common/Chip";
+import { useRecentSearch } from "@/application/hooks/common/useRecentSearch";
 import Navigation from "@/components/common/Navigation";
 import SearchPopular from "@/components/search/SearchBottom/SearchPopular";
+import { SearchRecent } from "@/components/search/SearchBottom/SearchRecent";
 import SearchResult from "@/components/search/SearchBottom/SearchResult";
 import SearchInput from "@/components/search/SearchInput";
 
@@ -25,26 +25,7 @@ function SearchPage() {
       {!inputProps.value ? (
         keywords.length ? (
           <div className="px-14">
-            <div className="flex justify-between">
-              <span className="text-semi-bold text-[1.4rem] text-dark-gray-10">최근 검색어</span>
-              <span
-                className="text-semi-bold text-[1.4rem] text-gray-10"
-                onClick={handleDeleteKeywords}
-              >
-                지우기
-              </span>
-            </div>
-            <div className="flex flex-wrap align-middle">
-              {keywords.map((keyword) => (
-                <Chip
-                  key={keyword.id}
-                  label={keyword.text}
-                  type="recent"
-                  size="medium"
-                  className="m-4"
-                />
-              ))}
-            </div>
+            <SearchRecent keywords={keywords} handleDeleteKeywords={handleDeleteKeywords} />
             <SearchPopular />
           </div>
         ) : (

@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 
-interface ISearch {
-  id: number;
-  text: string;
-}
+import type { ISearchKeyword } from "@/types";
 
-const useRecentSearch = () => {
-  const [keywords, setKeywords] = useState<ISearch[]>([]);
+export const useRecentSearch = () => {
+  const [keywords, setKeywords] = useState<ISearchKeyword[]>([]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -34,5 +31,3 @@ const useRecentSearch = () => {
 
   return { keywords, handleAddKeyword, handleDeleteKeywords };
 };
-
-export default useRecentSearch;
