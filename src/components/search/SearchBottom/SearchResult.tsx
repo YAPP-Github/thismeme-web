@@ -7,7 +7,7 @@ interface Prop {
   handleAddKeyWord: (text: string) => void;
 }
 
-function SearchResult({ value, handleAddKeyWord, ...rest }: Prop) {
+export const SearchResult = ({ value, handleAddKeyWord, ...rest }: Prop) => {
   const { searchResults } = useSearchResult(value);
 
   //유사 태그 검색도 SEO 를 고려해야할까
@@ -27,6 +27,4 @@ function SearchResult({ value, handleAddKeyWord, ...rest }: Prop) {
       ))}
     </>
   );
-}
-
-export default SearchResult;
+};

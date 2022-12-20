@@ -1,9 +1,9 @@
 import useInput from "@/application/hooks/common/useInput";
 import { useRecentSearch } from "@/application/hooks/common/useRecentSearch";
 import Navigation from "@/components/common/Navigation";
-import SearchPopular from "@/components/search/SearchBottom/SearchPopular";
+import { SearchPopular } from "@/components/search/SearchBottom/SearchPopular";
 import { SearchRecent } from "@/components/search/SearchBottom/SearchRecent";
-import SearchResult from "@/components/search/SearchBottom/SearchResult";
+import { SearchResult } from "@/components/search/SearchBottom/SearchResult";
 import SearchInput from "@/components/search/SearchInput";
 
 function SearchPage() {
