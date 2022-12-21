@@ -1,7 +1,4 @@
-import type { Search } from "mocks/types";
 import { rest } from "msw";
-
-import { ISearchResult } from "@/types";
 
 export const getSearch = rest.get("/search", (req, res, ctx) => {
   return res(

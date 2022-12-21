@@ -1,8 +1,8 @@
 import { Chip } from "@/components/common/Chip";
-import type { ISearchKeyword } from "@/types";
+import type { SearchKeyword } from "@/types";
 
 interface Props {
-  keywords: ISearchKeyword[];
+  keywords: SearchKeyword[];
   handleDeleteKeywords: () => void;
 }
 

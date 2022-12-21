@@ -1,11 +1,11 @@
-export interface ISearchResult {
+export interface SearchResult {
   tagId: number;
   name: string;
   categoryName: string;
   viewCount: number;
 }
 
-export interface ISearchKeyword {
+export interface SearchKeyword {
   id: number;
   text: string;
 }

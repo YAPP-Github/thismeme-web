@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-import type { ISearchKeyword } from "@/types";
+import type { SearchKeyword } from "@/types";
 
 export const useRecentSearch = () => {
-  const [keywords, setKeywords] = useState<ISearchKeyword[]>([]);
+  const [keywords, setKeywords] = useState<SearchKeyword[]>([]);
 
   useEffect(() => {
     //HTML을 바로 렌더링하기 때문에 useEffect 를 통해 온전한 window 객체를 불러옴

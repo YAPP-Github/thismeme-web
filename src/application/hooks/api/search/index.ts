@@ -2,10 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 import { getRecentSearch } from "@/infra/api/search";
-import type { ISearchResult } from "@/types";
+import type { SearchResult } from "@/types";
 
 export const useSearchResult = (value: string) => {
-  const [searchResults, setSearchResults] = useState<ISearchResult[]>();
+  const [searchResults, setSearchResults] = useState<SearchResult[]>();
 
   const { data, ...rest } = useQuery({
     queryKey: ["search", value],
