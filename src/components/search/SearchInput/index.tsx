@@ -18,15 +18,13 @@ export const SearchInput = ({ text, onReset, onSearch, ...rest }: Props) => {
         endComponents={
           <>
             <Icon className="absolute right-46" name="delete" onClick={onReset} />
-            {text && onSearch && (
-              <Icon
-                className="absolute right-16"
-                name="search"
-                onClick={() => {
-                  onSearch(text);
-                }}
-              />
-            )}
+            <Icon
+              className="absolute right-16"
+              name="search"
+              onClick={() => {
+                onSearch && text && onSearch(text);
+              }}
+            />
           </>
         }
       />

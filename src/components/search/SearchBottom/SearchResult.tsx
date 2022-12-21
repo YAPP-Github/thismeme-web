@@ -10,11 +10,12 @@ interface Prop {
 export const SearchResult = ({ value, handleAddKeyWord, ...rest }: Prop) => {
   const { searchResults } = useSearchResult(value);
 
+  console.log(searchResults);
   //유사 태그 검색도 SEO 를 고려해야할까
 
   return (
     <>
-      {searchResults.map((searchResult) => (
+      {searchResults?.map((searchResult) => (
         <SearchItem
           key={searchResult.tagId}
           majorType={searchResult.categoryName}
