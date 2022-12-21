@@ -22,17 +22,14 @@ const SearchPage = () => {
         onReset={inputProps.onReset}
         onSearch={handleAddKeyword}
       />
-      {!inputProps.value ? (
-        keywords.length ? (
-          <div className="px-14">
-            <SearchRecent handleDeleteKeywords={handleDeleteKeywords} keywords={keywords} />
-            <SearchPopular />
-          </div>
-        ) : (
-          <SearchPopular />
-        )
-      ) : (
+      {inputProps.value && (
         <SearchResult handleAddKeyWord={handleAddKeyword} value={inputProps.value} />
+      )}
+      {!inputProps.value && keywords.length && (
+        <div className="px-14">
+          <SearchRecent handleDeleteKeywords={handleDeleteKeywords} keywords={keywords} />
+          <SearchPopular />
+        </div>
       )}
     </>
   );
