@@ -2,13 +2,11 @@ import { useInput } from "@/application/hooks/common/useInput";
 import { useRecentSearch } from "@/application/hooks/common/useRecentSearch";
 import { Navigation } from "@/components/common/Navigation";
 import { SearchInput } from "@/components/search";
-import { SearchPopular } from "@/components/search/SearchBottom/SearchPopular";
-import { SearchRecent } from "@/components/search/SearchBottom/SearchRecent";
-import { SearchResult } from "@/components/search/SearchBottom/SearchResult";
+import { SearchPopular, SearchRecent, SearchResultList } from "@/components/search/SearchBottom";
 
 const SearchPage = () => {
   const inputProps = useInput();
-  const { keywords, handleAddKeyword, handleDeleteKeywords } = useRecentSearch();
+  const { keywords, onClickAddKeyword, onClickDeleteKeyword } = useRecentSearch();
 
   return (
     <>
@@ -20,14 +18,14 @@ const SearchPage = () => {
         text={inputProps.value}
         type="text"
         onReset={inputProps.onReset}
-        onSearch={handleAddKeyword}
+        onSearch={onClickAddKeyword}
       />
       {inputProps.value && (
-        <SearchResult handleAddKeyWord={handleAddKeyword} value={inputProps.value} />
+        <SearchResultList handleAddKeyWord={onClickAddKeyword} value={inputProps.value} />
       )}
       {!inputProps.value && keywords.length && (
         <div className="px-14">
-          <SearchRecent handleDeleteKeywords={handleDeleteKeywords} keywords={keywords} />
+          <SearchRecent handleDeleteKeywords={onClickDeleteKeyword} keywords={keywords} />
           <SearchPopular />
         </div>
       )}

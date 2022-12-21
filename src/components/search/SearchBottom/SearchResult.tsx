@@ -7,7 +7,7 @@ interface Prop {
   handleAddKeyWord: (text: string) => void;
 }
 
-export const SearchResult = ({ value, handleAddKeyWord, ...rest }: Prop) => {
+export const SearchResultList = ({ value, handleAddKeyWord, ...rest }: Prop) => {
   const { searchResults } = useSearchResult(value);
 
   console.log(searchResults);

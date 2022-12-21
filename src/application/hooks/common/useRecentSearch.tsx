@@ -15,7 +15,7 @@ export const useRecentSearch = () => {
     localStorage.setItem("recentSearch", JSON.stringify(keywords));
   }, [keywords]);
 
-  const handleAddKeyword = (text: string) => {
+  const onClickAddKeyword = (text: string) => {
     const newKeyword = {
       id: Date.now(),
       text: text,
@@ -23,9 +23,9 @@ export const useRecentSearch = () => {
     setKeywords([newKeyword, ...keywords.filter((keyword) => keyword.text !== text)]); //중복된 검색어 필터링
   };
 
-  const handleDeleteKeywords = () => {
+  const onClickDeleteKeyword = () => {
     setKeywords([]);
   };
 
-  return { keywords, handleAddKeyword, handleDeleteKeywords };
+  return { keywords, onClickAddKeyword, onClickDeleteKeyword };
 };
