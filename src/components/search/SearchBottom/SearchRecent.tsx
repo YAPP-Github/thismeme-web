@@ -3,17 +3,17 @@ import type { SearchKeyword } from "@/types";
 
 interface Props {
   keywords: SearchKeyword[];
-  handleDeleteKeywords: () => void;
+  onClickDeleteKeyword: () => void;
 }
 
-export const SearchRecent = ({ keywords, handleDeleteKeywords }: Props) => {
+export const SearchRecent = ({ keywords, onClickDeleteKeyword }: Props) => {
   return (
     <>
       <div className="flex justify-between">
         <span className="text-semi-bold text-[1.4rem] text-dark-gray-10">최근 검색어</span>
         <button
           className="text-semi-bold text-[1.4rem] text-gray-10"
-          onClick={handleDeleteKeywords}
+          onClick={onClickDeleteKeyword}
         >
           지우기
         </button>

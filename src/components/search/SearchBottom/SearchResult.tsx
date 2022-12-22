@@ -4,13 +4,11 @@ import { SearchItem } from "../SearchItem";
 
 interface Prop {
   value: string;
-  handleAddKeyWord: (text: string) => void;
+  onClickAddKeyword: (text: string) => void;
 }
 
-export const SearchResultList = ({ value, handleAddKeyWord, ...rest }: Prop) => {
+export const SearchResultList = ({ value, onClickAddKeyword, ...rest }: Prop) => {
   const { searchResults } = useSearchResult(value);
-
-  console.log(searchResults);
   //유사 태그 검색도 SEO 를 고려해야할까
 
   return (
@@ -22,7 +20,7 @@ export const SearchResultList = ({ value, handleAddKeyWord, ...rest }: Prop) => 
           searchText={value}
           tagName={searchResult.name}
           onClick={() => {
-            handleAddKeyWord(searchResult.name);
+            onClickAddKeyword(searchResult.name);
           }}
         />
       ))}
