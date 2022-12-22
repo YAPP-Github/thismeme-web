@@ -18,12 +18,13 @@ const SearchPage = () => {
         onReset={inputProps.onReset}
         onSearch={onClickAddKeyword}
       />
-      {inputProps.value && (
+      {inputProps.value ? (
         <SearchResultList value={inputProps.value} onClickAddKeyword={onClickAddKeyword} />
-      )}
-      {!inputProps.value && keywords.length && (
+      ) : (
         <div className="px-14">
-          <SearchRecent keywords={keywords} onClickDeleteKeyword={onClickDeleteKeyword} />
+          {keywords.length && (
+            <SearchRecent keywords={keywords} onClickDeleteKeyword={onClickDeleteKeyword} />
+          )}
           <SearchPopular />
         </div>
       )}
