@@ -1,7 +1,6 @@
 import { useInput, useRecentSearch } from "@/application/hooks";
 import { Navigation } from "@/components/common/Navigation";
-import { SearchInput } from "@/components/search";
-import { SearchPopular, SearchRecent, SearchResultList } from "@/components/search/SearchBottom";
+import { SearchInput, SearchPopular, SearchRecent, SearchResultList } from "@/components/search";
 
 const SearchPage = () => {
   const inputProps = useInput();
