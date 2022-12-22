@@ -1,5 +1,4 @@
-import { useInput } from "@/application/hooks/common/useInput";
-import { useRecentSearch } from "@/application/hooks/common/useRecentSearch";
+import { useInput, useRecentSearch } from "@/application/hooks";
 import { Navigation } from "@/components/common/Navigation";
 import { SearchInput } from "@/components/search";
 import { SearchPopular, SearchRecent, SearchResultList } from "@/components/search/SearchBottom";
