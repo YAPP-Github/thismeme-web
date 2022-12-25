@@ -1,4 +1,4 @@
-import { useSearchResult } from "@/application/hooks/api/search";
+import { useSearchResult } from "@/application/hooks";
 
 import { SearchItem } from "../SearchItem";
 
@@ -7,23 +7,26 @@ interface Prop {
   onClickAddKeyword: (text: string) => void;
 }
 
-export const SearchResultList = ({ value, onClickAddKeyword, ...rest }: Prop) => {
+export const SearchResultList = ({ value, onClickAddKeyword }: Prop) => {
   const { searchResults } = useSearchResult(value);
-  //유사 태그 검색도 SEO 를 고려해야할까
 
+  if (!value || searchResults?.length === 0) {
+    return null;
+  }
   return (
-    <>
+    <ul>
       {searchResults?.map((searchResult) => (
-        <SearchItem
-          key={searchResult.tagId}
-          majorType={searchResult.categoryName}
-          searchText={value}
-          tagName={searchResult.name}
-          onClick={() => {
-            onClickAddKeyword(searchResult.name);
-          }}
-        />
+        <li key={searchResult.tagId}>
+          <SearchItem
+            majorType={searchResult.categoryName}
+            searchText={value}
+            tagName={searchResult.name}
+            onClick={() => {
+              onClickAddKeyword(searchResult.name);
+            }}
+          />
+        </li>
       ))}
-    </>
+    </ul>
   );
 };

@@ -7,6 +7,8 @@ interface Props {
 }
 
 export const SearchRecent = ({ keywords, onClickDeleteKeyword }: Props) => {
+  if (keywords.length === 0) return null;
+
   return (
     <>
       <div className="flex justify-between">

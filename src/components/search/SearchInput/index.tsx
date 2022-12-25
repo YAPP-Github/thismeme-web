@@ -4,16 +4,16 @@ import { Icon } from "@/components/common/Icon";
 import { InputBase } from "@/components/common/Input";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  text?: string;
   onReset?: () => void;
-  onSearch?: (text: string) => void;
+  onClickAddKeyword?: (text: string) => void;
 }
 
-export const SearchInput = ({ text, onReset, onSearch, ...rest }: Props) => {
+export const SearchInput = ({ onReset, onClickAddKeyword, value, ...rest }: Props) => {
   return (
     <div className="relative flex items-center justify-start">
       <InputBase
         className="h-43 w-full rounded-22 bg-light-gray-10 pl-22 text-semi-bold text-dark-gray-10 outline-none placeholder:text-gray-10"
+        value={value}
         {...rest}
         endComponents={
           <>
@@ -22,7 +22,7 @@ export const SearchInput = ({ text, onReset, onSearch, ...rest }: Props) => {
               className="absolute right-16"
               name="search"
               onClick={() => {
-                onSearch && text && onSearch(text);
+                onClickAddKeyword?.(value as string);
               }}
             />
           </>
