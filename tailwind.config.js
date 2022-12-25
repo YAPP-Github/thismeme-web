@@ -33,7 +33,7 @@ module.exports = {
         header: [
           "1.8rem",
           {
-            lineHeight: "1.8rem",
+            lineHeight: "140%",
             letterSpacing: "0em",
             fontWeight: "700",
           },
@@ -41,7 +41,7 @@ module.exports = {
         title: [
           "2rem",
           {
-            lineHeight: "2rem",
+            lineHeight: "140%",
             letterSpacing: "0em",
             fontWeight: "700",
           },
@@ -49,7 +49,7 @@ module.exports = {
         tag: [
           "1.5rem",
           {
-            lineHeight: "1.8rem",
+            lineHeight: "130%",
             letterSpacing: "0em",
             fontWeight: "600",
           },
@@ -57,7 +57,7 @@ module.exports = {
         regular: [
           "1.6rem",
           {
-            lineHeight: "1.6rem",
+            lineHeight: "130%",
             letterSpacing: "0em",
             fontWeight: "400",
           },
@@ -65,7 +65,7 @@ module.exports = {
         "semi-bold": [
           "1.6rem",
           {
-            lineHeight: "1.9rem",
+            lineHeight: "130%",
             letterSpacing: "0em",
             fontWeight: "600",
           },
