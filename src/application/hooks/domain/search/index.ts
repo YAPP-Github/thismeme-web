@@ -1,6 +1,6 @@
 import type { SearchKeyword } from "@/types";
 
-import { useLocalStorage } from "./useLocalStorage";
+import { useLocalStorage } from "../../common/useLocalStorage";
 
 export const useRecentSearch = () => {
   const [keywords, setKeywords] = useLocalStorage<SearchKeyword[]>("recentSearch", {
