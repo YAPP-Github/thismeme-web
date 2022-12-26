@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
+import { Suspense } from "react";
 
-import { Chip } from "@/components/common/Chip";
 import { Navigation } from "@/components/common/Navigation";
-import { PopularTag } from "@/components/home/PopularTag";
+import { PopularTag } from "@/components/common/Tags/PopularTag";
 import { SearchInput } from "@/components/search";
 
 const Home: NextPage = () => {
@@ -19,8 +19,13 @@ const Home: NextPage = () => {
           router.push("/search");
         }}
       />
-      <PopularTag />
-      <div>어쩌면 당신이 찾았을 밈</div>
+      <Suspense fallback={<div>loading</div>}>
+        <div className="mt-60 mb-13 text-center text-regular">인기검색어</div>
+        <div className="flex flex-row flex-wrap justify-center px-36">
+          <PopularTag type="main" />
+        </div>
+      </Suspense>
+      <div className="text-center text-title">어쩌면 당신이 찾았을 밈</div>
     </div>
   );
 };
