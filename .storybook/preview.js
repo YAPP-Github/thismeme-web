@@ -3,11 +3,25 @@ import { initialize, mswDecorator } from "msw-storybook-addon";
 import "@/styles/globals.css";
 import { handlers } from "../mocks/handlers";
 import * as NextImage from "next/image";
+import { QueryClientProvider } from "../src/application/queryClient";
+import { Suspense } from "react";
+import { RouterContext } from "next/dist/shared/lib/router-context";
 
 // Initialize MSW
 initialize();
 
-export const decorators = [mswDecorator, (Story) => <Story />];
+export const decorators = [
+  mswDecorator,
+  (Story) => (
+    <QueryClientProvider>
+      <Suspense fallback="loading...">
+        <div className="font-sans" style={{ "--font-pretendardVariable": "Pretendard" }}>
+          <Story />
+        </div>
+      </Suspense>
+    </QueryClientProvider>
+  ),
+];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -22,9 +36,10 @@ export const parameters = {
   },
   layout: "fullscreen",
   msw: {
-    handlers: {
-      handlers,
-    },
+    handlers,
+  },
+  nextRouter: {
+    Provider: RouterContext.Provider,
   },
 };
 

@@ -1,5 +1,9 @@
-import { axiosBasic } from "./client";
+import type { AxiosInstance } from "axios";
 
-export const getPopularTag = () => {
-  return axiosBasic.get("/tags/popular").then((response) => response.data);
-};
+export class PopularTagApi {
+  constructor(private api: AxiosInstance) {}
+
+  getPopularTag = () => {
+    return this.api.get(`http://localhost:3000/tags/popular`).then((response) => response.data);
+  };
+}
