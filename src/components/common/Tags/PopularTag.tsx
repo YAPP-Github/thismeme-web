@@ -1,10 +1,14 @@
-import { usePopularTag } from "@/application/hooks";
+import { usePopularTag } from "@/application/hooks/api/tags";
 import { SearchPopularItem } from "@/components/search/SearchPopular";
 import type { SearchResult } from "@/types";
 
 import { Chip } from "../Chip";
 
-export const PopularTag = ({ type }: { type: "main" | "search" }) => {
+interface Props {
+  type: "main" | "search";
+}
+
+export const PopularTag = ({ type }: Props) => {
   const { tags } = usePopularTag();
 
   return (

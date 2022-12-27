@@ -2,7 +2,7 @@ import { rest } from "msw";
 
 export const getPopularTag = rest.get("/tags/popular", async (req, res, ctx) => {
   return res(
-    ctx.status(200),
+    ctx.delay(),
     ctx.json({
       tags: [
         {

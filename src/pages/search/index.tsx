@@ -26,11 +26,13 @@ const SearchPage = () => {
             <SearchResultList value={inputProps.value} onClickAddKeyword={onClickAddKeyword} />
           </div>
         </Suspense>
-        <div className="px-14">
-          <SearchRecent keywords={keywords} onClickDeleteKeyword={onClickDeleteKeyword} />
-          <div className="mb-8 text-semi-bold-14 text-dark-gray-10">인기 검색어</div>
-          <PopularTag type="search" />
-        </div>
+        <Suspense fallback={<div className="text-title">로딩중중</div>}>
+          <div className="px-14">
+            <SearchRecent keywords={keywords} onClickDeleteKeyword={onClickDeleteKeyword} />
+            <div className="mb-8 text-semi-bold-14 text-dark-gray-10">인기 검색어</div>
+            <PopularTag type="search" />
+          </div>
+        </Suspense>
       </div>
     </>
   );

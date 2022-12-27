@@ -24,13 +24,12 @@ const Home: NextPage = () => {
           router.push("/search");
         }}
       />
-      <Suspense fallback={<div>loading</div>}>
+      <Suspense fallback={<div className="text-title">loading</div>}>
         <div className="mt-60 mb-13 text-center text-regular">인기검색어</div>
         <div className="flex flex-row flex-wrap justify-center px-36">
           <PopularTag type="main" />
         </div>
       </Suspense>
-
       <div className="text-center text-title">어쩌면 당신이 찾았을 밈</div>
     </>
   );
