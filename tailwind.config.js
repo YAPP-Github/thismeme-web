@@ -70,12 +70,20 @@ module.exports = {
             fontWeight: "600",
           },
         ],
+        "semi-bold-14": [
+          "1.4rem",
+          {
+            lineHeight: "160%",
+            letterSpacing: "0em",
+            fontWeight: "600",
+          },
+        ],
         label: [
           "1.2rem",
           {
-            lineHeight: "1.4rem", //TODO: label tag lineheight 디자인 체크
+            lineHeight: "130%",
             letterSpacing: "0em",
-            fontWeight: "600",
+            fontWeight: "400",
           },
         ],
       },

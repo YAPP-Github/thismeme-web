@@ -20,6 +20,7 @@ const SearchPage = () => {
           type="text"
           onClickAddKeyword={onClickAddKeyword}
         />
+        <p className="my-16 px-14 text-label text-gray-10">밈 제목,태그 설명을 입력하세요</p>
         <Suspense fallback={<div>loading...</div>}>
           <div className="absolute w-full bg-white">
             <SearchResultList value={inputProps.value} onClickAddKeyword={onClickAddKeyword} />
@@ -27,10 +28,8 @@ const SearchPage = () => {
         </Suspense>
         <div className="px-14">
           <SearchRecent keywords={keywords} onClickDeleteKeyword={onClickDeleteKeyword} />
-          <div className="text-semi-bold text-[1.4rem] text-dark-gray-10">
-            인기 검색어
-            <PopularTag type="search" />
-          </div>
+          <div className="mb-8 text-semi-bold-14 text-dark-gray-10">인기 검색어</div>
+          <PopularTag type="search" />
         </div>
       </div>
     </>

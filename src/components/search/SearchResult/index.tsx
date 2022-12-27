@@ -8,7 +8,7 @@ interface Prop {
 }
 
 export const SearchResultList = ({ value, onClickAddKeyword }: Prop) => {
-  const { searchResults } = useSearchResult(value);
+  const { searchResults } = useSearchResult(value.trim());
 
   if (!value || searchResults?.length === 0) {
     return null;

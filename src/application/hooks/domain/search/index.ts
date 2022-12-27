@@ -12,7 +12,11 @@ export const useRecentSearch = () => {
       id: Date.now(),
       text: text,
     };
-    setKeywords((keywords) => [newKeyword, ...keywords.filter((keyword) => keyword.text !== text)]); //중복된 검색어 필터링
+    text.trim() &&
+      setKeywords((keywords) => [
+        newKeyword,
+        ...keywords.filter((keyword) => keyword.text !== text),
+      ]); //중복된 검색어 필터링
   };
 
   const onClickDeleteKeyword = () => {

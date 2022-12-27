@@ -10,13 +10,10 @@ export const SearchRecent = ({ keywords, onClickDeleteKeyword }: Props) => {
   if (keywords.length === 0) return null;
 
   return (
-    <>
+    <div className="mb-31">
       <div className="flex justify-between">
-        <span className="text-semi-bold text-[1.4rem] text-dark-gray-10">최근 검색어</span>
-        <button
-          className="text-semi-bold text-[1.4rem] text-gray-10"
-          onClick={onClickDeleteKeyword}
-        >
+        <span className="text-semi-bold-14 text-dark-gray-10">최근 검색어</span>
+        <button className="text-semi-bold-14 text-gray-10" onClick={onClickDeleteKeyword}>
           지우기
         </button>
       </div>
@@ -25,6 +22,6 @@ export const SearchRecent = ({ keywords, onClickDeleteKeyword }: Props) => {
           <Chip className="m-4" key={keyword.id} label={keyword.text} size="medium" type="recent" />
         ))}
       </div>
-    </>
+    </div>
   );
 };

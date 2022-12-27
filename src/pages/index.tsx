@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { Suspense } from "react";
 
@@ -6,13 +7,17 @@ import { Navigation } from "@/components/common/Navigation";
 import { PopularTag } from "@/components/common/Tags/PopularTag";
 import { SearchInput } from "@/components/search";
 
+import Avatar from "../../public/img/Avatar.png";
+
 const Home: NextPage = () => {
   const router = useRouter();
 
   return (
-    <div>
+    <>
       <Navigation page="intro" />
-      <div>브랜드 이미지가 들어갈 곳</div>
+      <div className="flex justify-center">
+        <Image alt="brandimage" placeholder="blur" src={Avatar} />
+      </div>
       <SearchInput
         placeholder="당신이 찾는 밈 여기 있다."
         onClick={() => {
@@ -25,8 +30,9 @@ const Home: NextPage = () => {
           <PopularTag type="main" />
         </div>
       </Suspense>
+
       <div className="text-center text-title">어쩌면 당신이 찾았을 밈</div>
-    </div>
+    </>
   );
 };
 

@@ -1,10 +1,10 @@
 import { usePopularTag } from "@/application/hooks";
+import { SearchPopularItem } from "@/components/search/SearchPopular";
 import type { SearchResult } from "@/types";
 
-import { SearchPopularItem } from "../../search/SearchPopular/SearchPopularItem";
 import { Chip } from "../Chip";
 
-export const PopularTag = ({ type }: { type: string }) => {
+export const PopularTag = ({ type }: { type: "main" | "search" }) => {
   const { tags } = usePopularTag();
 
   return (
