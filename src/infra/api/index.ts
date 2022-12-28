@@ -2,7 +2,7 @@ import { axiosBasic } from "@/infra/api/client";
 import { MemeApi } from "@/infra/api/meme";
 
 import { SearchApi } from "./search";
-import { PopularTagApi } from "./tags";
+import { TagApi } from "./tags";
 
 /**
  * NOTE
@@ -18,5 +18,5 @@ import { PopularTagApi } from "./tags";
 export const api = {
   search: new SearchApi(axiosBasic),
   meme: new MemeApi(axiosBasic),
-  tags: new PopularTagApi(axiosBasic),
+  tags: new TagApi(axiosBasic),
 };

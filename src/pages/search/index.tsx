@@ -2,8 +2,12 @@ import { Suspense } from "react";
 
 import { useInput, useRecentSearch } from "@/application/hooks";
 import { Navigation } from "@/components/common/Navigation";
-import { PopularTag } from "@/components/common/Tags/PopularTag";
-import { SearchInput, SearchRecent, SearchResultList } from "@/components/search";
+import {
+  SearchInput,
+  SearchPopularList,
+  SearchRecent,
+  SearchResultList,
+} from "@/components/search";
 
 const SearchPage = () => {
   const inputProps = useInput();
@@ -30,7 +34,7 @@ const SearchPage = () => {
           <div className="px-14">
             <SearchRecent keywords={keywords} onClickDeleteKeyword={onClickDeleteKeyword} />
             <div className="mb-8 text-semi-bold-14 text-dark-gray-10">인기 검색어</div>
-            <PopularTag type="search" />
+            <SearchPopularList />
           </div>
         </Suspense>
       </div>

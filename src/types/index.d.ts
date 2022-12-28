@@ -1,5 +1,4 @@
-export interface SearchResult {
-  //네이밍 Tag 로 변경 어떨까요 흠
+export interface Tag {
   tagId: number;
   name: string;
   categoryName: string;

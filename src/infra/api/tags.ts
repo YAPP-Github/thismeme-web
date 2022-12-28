@@ -1,9 +1,9 @@
 import type { AxiosInstance } from "axios";
 
-export class PopularTagApi {
+export class TagApi {
   constructor(private api: AxiosInstance) {}
 
   getPopularTag = () => {
-    return this.api.get(`http://localhost:3000/tags/popular`).then((response) => response.data);
+    return this.api.get(`/tags/popular`).then((response) => response.data);
   };
 }
