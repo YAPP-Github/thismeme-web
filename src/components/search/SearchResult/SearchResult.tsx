@@ -1,6 +1,6 @@
 import { useSearchResult } from "@/application/hooks";
 
-import { SearchItem } from "../SearchItem";
+import { SearchItem } from "../SearchItem/SearchItem";
 
 interface Prop {
   value: string;

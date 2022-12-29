@@ -7,12 +7,12 @@ export const SearchPopularList = () => {
   const { tags } = usePopularTag();
 
   return (
-    <>
-      {tags?.map((tag: Tag) => (
-        <div key={tag.tagId}>
-          <SearchPopularItem name={tag.name} tagId={tag.tagId} />
-        </div>
+    <ul>
+      {tags?.map((tag: Tag, index) => (
+        <li key={tag.tagId}>
+          <SearchPopularItem index={index} name={tag.name} />
+        </li>
       ))}
-    </>
+    </ul>
   );
 };

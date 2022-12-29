@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { Suspense } from "react";
 
 import { Navigation } from "@/components/common/Navigation";
-import { HomePopular } from "@/components/home/HomePopular";
+import { HomePopular } from "@/components/home";
 import { SearchInput } from "@/components/search";
 
 import Avatar from "../../public/img/Avatar.png";
@@ -26,9 +26,9 @@ const Home: NextPage = () => {
 
       <div className="mt-60 mb-13 text-center text-regular">인기검색어</div>
       <Suspense fallback={<div className="text-title">loading</div>}>
-        <div className="flex flex-row flex-wrap justify-center px-36">
+        <ul className="flex flex-row flex-wrap justify-center px-36">
           <HomePopular />
-        </div>
+        </ul>
       </Suspense>
       <div className="text-center text-title">어쩌면 당신이 찾았을 밈</div>
     </>
