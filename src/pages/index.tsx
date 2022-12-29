@@ -52,7 +52,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       </div>
       <button onClick={handleOpen}>Open Modal</button>
 
-      {modalOpen && <SampleModal close={handleClose} modalOpen={modalOpen} />}
+      {modalOpen && <SampleModal modalOpen={modalOpen} onClose={handleClose} />}
 
       {posts && (
         <ul className="flex flex-col gap-4">

@@ -2,12 +2,12 @@ import { ModalBase } from "./ModalBase";
 
 interface Props {
   modalOpen: boolean;
-  close: () => void;
+  onClose: () => void;
 }
 
-export const SampleModal = ({ close }: Props) => {
+export const SampleModal = ({ onClose }: Props) => {
   return (
-    <ModalBase>
+    <ModalBase onClose={onClose}>
       <div className="m-auto overflow-hidden">
         <div className="z-100 m-auto h-300 w-300 bg-white">
           <div className="text-20-bold-140">자주 찾는 태그를 북마크하면</div>

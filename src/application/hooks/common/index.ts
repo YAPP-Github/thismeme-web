@@ -1,3 +1,4 @@
+export * from "./useCloseModal";
 export * from "./useColoredText";
 export * from "./useDebounce";
 export * from "./useEllipsis";
