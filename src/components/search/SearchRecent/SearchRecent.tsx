@@ -12,8 +12,8 @@ export const SearchRecent = ({ keywords, onClickDeleteKeyword }: Props) => {
   return (
     <div className="mb-31">
       <div className="flex justify-between">
-        <span className="text-semi-bold-14 text-dark-gray-10">최근 검색어</span>
-        <button className="text-semi-bold-14 text-gray-10" onClick={onClickDeleteKeyword}>
+        <span className="text-15-semibold-130 text-dark-gray-10">최근 검색어</span>
+        <button className="text-15-semibold-130 text-gray-10" onClick={onClickDeleteKeyword}>
           지우기
         </button>
       </div>
