@@ -1,7 +1,9 @@
 import type { Post } from "mocks/types";
 import type { NextPage } from "next";
 
+import { useModal } from "@/application/hooks/common";
 import { Chip } from "@/components/common/Chip";
+import { SampleModal } from "@/components/common/Modal/SampleModal";
 import { Navigation } from "@/components/common/Navigation";
 import { PostItem } from "@/components/common/PostList/PostItem";
 import { SideBar } from "@/components/common/SideBar";
@@ -17,6 +19,8 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       .then((res) => res.json())
       .then((user) => alert(`성공 !\n${user.nickname}, ${user.email}`));
   };
+
+  const { modalOpen, handleOpen, handleClose } = useModal();
   return (
     <div>
       <Navigation page="intro" />
@@ -46,6 +50,10 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <div className="h-10 w-10 bg-brand"></div>
         <div className="h-10 w-10 bg-bookmark"></div>
       </div>
+      <button onClick={handleOpen}>Open Modal</button>
+
+      {modalOpen && <SampleModal close={handleClose} modalOpen={modalOpen} />}
+
       {posts && (
         <ul className="flex flex-col gap-4">
           {posts.map((post) => (
@@ -53,6 +61,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
           ))}
         </ul>
       )}
+
       <Chip
         label="무한도전"
         size="medium"
