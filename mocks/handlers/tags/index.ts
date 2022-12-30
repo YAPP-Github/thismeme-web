@@ -1,7 +1,7 @@
 import { rest } from "msw";
 
 export const getPopularTag = rest.get(
-  "http://localhost:3000/tags/popular",
+  `${process.env.NEXT_PUBLIC_API_URL}/tags/popular`,
   async (req, res, ctx) => {
     return res(
       ctx.delay(),
