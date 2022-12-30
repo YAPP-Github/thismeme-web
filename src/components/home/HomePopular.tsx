@@ -10,7 +10,7 @@ export const HomePopular = () => {
     <>
       {tags?.map((tag: Tag) => (
         <li key={tag.tagId}>
-          <Chip className="ml-8 mb-8" label={tag.name} size="medium" type="recommend" />
+          <Chip className="ml-8 mb-8" color="darkGray" label={tag.name} size="medium" />
         </li>
       ))}
     </>
