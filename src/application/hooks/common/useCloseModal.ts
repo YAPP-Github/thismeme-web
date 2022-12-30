@@ -13,7 +13,7 @@ export const useCloseModal = ({ onClose }: Props) => {
       if (!element) {
         return;
       }
-      if (element.contains(event.target)) {
+      if (element === event.target) {
         onClose();
       }
     };
