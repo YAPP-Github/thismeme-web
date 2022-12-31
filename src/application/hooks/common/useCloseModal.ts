@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 interface Props {
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 export const useCloseModal = ({ onClose }: Props) => {
@@ -13,7 +13,7 @@ export const useCloseModal = ({ onClose }: Props) => {
       if (!element) {
         return;
       }
-      if (element === event.target) {
+      if (element === event.target && onClose) {
         onClose();
       }
     };

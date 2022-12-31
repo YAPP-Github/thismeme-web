@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 import { useModal } from "@/application/hooks/common";
 import { brandimage } from "@/components/common/Image/assets";
-import { SampleModal } from "@/components/common/Modal/SampleModal";
+import { SampleModal } from "@/components/common/Modal";
 import { Navigation } from "@/components/common/Navigation";
 import { HomePopular } from "@/components/home";
 import { SearchInput } from "@/components/search";
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       <Navigation page="intro" />
       <button onClick={handleOpen}>Open Modal</button>
       {modalOpen && <SampleModal onClose={handleClose} />}
-      <Image alt="brandimage" className="m-auto my-10" placeholder="blur" src={brandimage} />
+      <Image alt="brandimage" className="m-auto my-10" height={190} src={brandimage} width={230} />
       <SearchInput
         placeholder="당신이 찾는 밈 여기 있다."
         onClick={() => {

@@ -5,7 +5,7 @@ import { useCloseModal } from "@/application/hooks";
 import { Portal } from "../Portal";
 
 interface Props {
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 export const ModalBase = ({ children, onClose, ...rest }: PropsWithChildren<Props>) => {
