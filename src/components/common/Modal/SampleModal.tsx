@@ -6,7 +6,6 @@ import { signup } from "../Image/assets";
 import { ModalBase } from "./ModalBase";
 
 interface Props {
-  modalOpen: boolean;
   onClose: () => void;
 }
 

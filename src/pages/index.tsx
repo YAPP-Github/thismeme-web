@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     <>
       <Navigation page="intro" />
       <button onClick={handleOpen}>Open Modal</button>
-      {modalOpen && <SampleModal modalOpen={modalOpen} onClose={handleClose} />}
+      {modalOpen && <SampleModal onClose={handleClose} />}
       <Image alt="brandimage" className="m-auto my-10" placeholder="blur" src={brandimage} />
       <SearchInput
         placeholder="당신이 찾는 밈 여기 있다."

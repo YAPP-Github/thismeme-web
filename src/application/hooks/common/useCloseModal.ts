@@ -8,7 +8,7 @@ export const useCloseModal = ({ onClose }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const clickModalOutside = (event: any) => {
+    const clickModalOutside = (event: MouseEvent) => {
       const element = ref.current;
       if (!element) {
         return;

@@ -1,20 +1,22 @@
-import type { ReactNode } from "react";
+import type { PropsWithChildren } from "react";
 
 import { useCloseModal } from "@/application/hooks";
 
 import { Portal } from "../Portal";
 
 interface Props {
-  children: ReactNode;
   onClose: () => void;
 }
 
-export const ModalBase = ({ children, onClose, ...rest }: Props) => {
+export const ModalBase = ({ children, onClose, ...rest }: PropsWithChildren<Props>) => {
   const ref = useCloseModal({ onClose });
 
   return (
     <Portal id="modal-portal">
-      <div className="z-1000 relative flex h-screen w-screen items-center bg-[#00000099]" ref={ref}>
+      <div
+        className="absolute z-[1000] flex h-full w-full items-center overflow-auto bg-[#00000099]"
+        ref={ref}
+      >
         {children}
       </div>
     </Portal>
