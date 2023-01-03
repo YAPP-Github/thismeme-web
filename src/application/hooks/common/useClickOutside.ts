@@ -4,7 +4,7 @@ interface Props {
   onClose?: () => void;
 }
 
-export const useCloseModal = ({ onClose }: Props) => {
+export const useClickOutside = ({ onClose }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

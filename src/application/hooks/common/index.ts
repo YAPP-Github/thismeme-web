@@ -1,4 +1,4 @@
-export * from "./useCloseModal";
+export * from "./useClickOutside";
 export * from "./useColoredText";
 export * from "./useDebounce";
 export * from "./useEllipsis";

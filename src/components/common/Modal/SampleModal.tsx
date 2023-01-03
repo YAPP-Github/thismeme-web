@@ -2,7 +2,6 @@ import Image from "next/image";
 
 import { Button } from "../Button";
 import { Icon } from "../Icon";
-import { signup } from "../Image/assets";
 import { ModalBase } from "./ModalBase";
 
 interface Props {
@@ -16,7 +15,13 @@ export const SampleModal = ({ onClose }: Props) => {
         <div className="pt-28 text-center align-middle text-20-bold-140">
           자주 찾는 태그를 북마크하면, 엄청 재밌을 걸요
         </div>
-        <Image alt="signup" className="m-auto my-10" height={150} src={signup} width={160} />
+        <Image
+          alt="signup"
+          className="m-auto my-10"
+          height={150}
+          src="/img/signup.png"
+          width={160}
+        />
         <Button
           className="mt-8 w-290 border border-solid border-light-gray-30 text-16-regular-130"
           size="large"

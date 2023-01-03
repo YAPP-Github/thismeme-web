@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react";
 
-import { useCloseModal } from "@/application/hooks";
+import { useClickOutside } from "@/application/hooks";
 
 import { Portal } from "../Portal";
 
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const ModalBase = ({ children, onClose, ...rest }: PropsWithChildren<Props>) => {
-  const ref = useCloseModal({ onClose });
+  const ref = useClickOutside({ onClose });
 
   return (
     <Portal id="modal-portal">
