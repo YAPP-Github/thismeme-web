@@ -17,6 +17,13 @@ const Home: NextPage = () => {
       <div className="flex justify-center">
         <Image alt="brandimage" placeholder="blur" src={Avatar} />
       </div>
+      <button
+        onClick={() => {
+          router.push("http://3.35.85.217:8080/oauth2/authorization/kakao");
+        }}
+      >
+        카카오로그인
+      </button>
       <SearchInput
         placeholder="당신이 찾는 밈 여기 있다."
         onClick={() => {
