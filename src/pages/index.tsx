@@ -11,13 +11,13 @@ import { SearchInput } from "@/components/search";
 
 const Home: NextPage = () => {
   const router = useRouter();
-  const { modalOpen, handleOpen, handleClose } = useModal();
+  const { modalOpen, onOpen, onClose } = useModal();
 
   return (
     <>
       <Navigation page="intro" />
-      <button onClick={handleOpen}>Open Modal</button>
-      {modalOpen && <SampleModal onClose={handleClose} />}
+      <button onClick={onOpen}>Open Modal</button>
+      {modalOpen && <SampleModal onClose={onClose} />}
       <Image
         alt="brandimage"
         className="m-auto my-10"

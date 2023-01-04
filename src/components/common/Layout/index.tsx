@@ -1,7 +1,7 @@
 import localFont from "@next/font/local";
 import type { PropsWithChildren } from "react";
 
-export const myFont = localFont({
+const myFont = localFont({
   src: "../../../styles/fonts/PretendardVariable.woff2",
   variable: "--font-pretendardVariable",
 });
