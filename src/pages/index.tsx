@@ -7,23 +7,19 @@ import { Navigation } from "@/components/common/Navigation";
 import { HomePopular } from "@/components/home";
 import { SearchInput } from "@/components/search";
 
-import Avatar from "../../public/img/Avatar.png";
-
 const Home: NextPage = () => {
   const router = useRouter();
+
   return (
     <>
       <Navigation page="intro" />
-      <div className="flex justify-center">
-        <Image alt="brandimage" placeholder="blur" src={Avatar} />
-      </div>
-      <button
-        onClick={() => {
-          router.push("http://3.35.85.217:8080/oauth2/authorization/kakao");
-        }}
-      >
-        카카오로그인
-      </button>
+      <Image
+        alt="brandimage"
+        className="m-auto my-10"
+        height={190}
+        src="/img/brandimage.png"
+        width={230}
+      />
       <SearchInput
         placeholder="당신이 찾는 밈 여기 있다."
         onClick={() => {
