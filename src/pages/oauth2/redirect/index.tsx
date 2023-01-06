@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 
 import { useLocalStorage } from "@/application/hooks";
 
-const KaKaoLoginPage = () => {
+const KaKaoRedirect = () => {
   const [login, setLogin] = useLocalStorage<boolean>("loginState", { defaultValue: false });
 
   useEffect(() => {
@@ -14,4 +14,4 @@ const KaKaoLoginPage = () => {
   return <div>Spinner</div>;
 };
 
-export default KaKaoLoginPage;
+export default KaKaoRedirect;
