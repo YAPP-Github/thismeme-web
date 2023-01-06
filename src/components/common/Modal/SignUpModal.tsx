@@ -35,9 +35,9 @@ export const SignUpModal = ({ onClose }: Props) => {
         <Button
           className="mt-8 w-290 bg-[#FEE500] text-16-regular-130"
           size="large"
-          onClick={() => {
-            router.push(`${process.env.NEXT_PUBLIC_API_KAKAO}/oauth2/authorization/kakao`);
-          }}
+          onClick={() =>
+            (window.location.href = `${process.env.NEXT_PUBLIC_API_KAKAO}/oauth2/authorization/kakao`)
+          }
         >
           <Icon className="mr-6" name="kakao2" />
           카카오로 3초 만에 시작하기
