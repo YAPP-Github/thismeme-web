@@ -50,7 +50,7 @@ export const Navigation = ({
   return (
     <nav className="sticky top-0 flex min-h-[5rem] w-full items-center justify-between gap-16 bg-white">
       <div className="flex grow items-center gap-16">{left}</div>
-      <span className="absolute flex h-full w-full items-center justify-center text-header">
+      <span className="absolute flex h-full w-full items-center justify-center text-18-bold-140">
         {title}
       </span>
       <div className="flex w-fit items-center justify-center gap-8">{right}</div>
