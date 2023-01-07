@@ -6,7 +6,6 @@ import * as Icons from "./assets";
 const colors = {
   black: "[&_*]:fill-black [&_*]:stroke-black",
   primary: "[&_*]:fill-primary [&_*]:stroke-primary",
-  bookmark: "[&_*]:fill-bookmark [&_*]:stroke-bookmark",
   white: "[&_*]:fill-white [&_*]:stroke-white",
   default: "",
 };
