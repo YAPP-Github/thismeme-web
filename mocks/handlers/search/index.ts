@@ -1,9 +1,9 @@
 import { rest } from "msw";
 
-import type { PaginationResponse, SearchResult } from "@/types";
+import type { PaginationResponse, SearchItem } from "@/types";
 
 export const getSearch = rest.get(
-  `${process.env.NEXT_PUBLIC_API_URL}/tags/search`,
+  `${process.env.NEXT_PUBLIC_SEARCH_API_URL}/tags/search`,
   (req, res, ctx) => {
     const query = req.url.searchParams.get("word");
 
@@ -83,21 +83,28 @@ const searchResults = Array.from(Array(1024).keys()).map((id) => {
   const randomIndex = Math.floor(Math.random() * sampleImages.length);
   const { url, width, height } = sampleImages[randomIndex];
   return {
-    id,
-    title: "무난한도전",
-    image_url: url,
-    image_width: width,
-    image_height: height,
-    tags: ["무한도전", "박명수"],
-    view_count: 10,
-    share_count: 132,
-    create_date: new Date().toString(),
-    modified_date: new Date().toString(),
+    memeId: id,
+    name: "무난한도전",
+    image: {
+      images: [
+        {
+          imageId: id,
+          imageUrl: url,
+          imageWidth: width,
+          imageHeight: height,
+        },
+      ],
+      count: 1,
+    },
+    viewCount: 10,
+    shareCount: 132,
+    createdDate: new Date().toString(),
+    modifiedDate: new Date().toString(),
   };
 });
 
 export const getSearchResultsByKeyword = rest.get(
-  `${process.env.NEXT_PUBLIC_API_URL}/search`,
+  `${process.env.NEXT_PUBLIC_SEARCH_API_URL}/search`,
   (req, res, ctx) => {
     const { searchParams } = req.url;
     const query = searchParams.get("keyword");
@@ -110,7 +117,7 @@ export const getSearchResultsByKeyword = rest.get(
     }
     return res(
       ctx.status(200),
-      ctx.json<PaginationResponse<SearchResult>>({
+      ctx.json<PaginationResponse<SearchItem>>({
         data,
         pageNumber: offset,
         pageSize: limit,
@@ -123,7 +130,7 @@ export const getSearchResultsByKeyword = rest.get(
 );
 
 export const getSearchResultsByTag = rest.get(
-  `${process.env.NEXT_PUBLIC_API_URL}/search/tag`,
+  `${process.env.NEXT_PUBLIC_SEARCH_API_URL}/search/tag`,
   (req, res, ctx) => {
     const { searchParams } = req.url;
     const query = searchParams.get("keyword");
@@ -136,7 +143,7 @@ export const getSearchResultsByTag = rest.get(
     }
     return res(
       ctx.status(200),
-      ctx.json<PaginationResponse<SearchResult>>({
+      ctx.json<PaginationResponse<SearchItem>>({
         data,
         pageNumber: offset,
         pageSize: limit,

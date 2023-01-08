@@ -7,14 +7,14 @@ import type { ComponentProps } from "react";
  * storybook jsdoc parse 오류 발생
  * - interface 내부에 @deprecated 어노테이션이 있으면 문제 생기는 듯 보임
  */
-interface Props extends Omit<ComponentProps<"img">, "alt" | "placeholder" | "width" | "height"> {
+interface Props extends Omit<ComponentProps<"img">, "alt" | "placeholder"> {
   src?: string;
 }
 
 const base64Blur =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mO8/Z8BAzAOZUEAQ+ESj6kXXm0AAAAASUVORK5CYII=";
 
-const Photo = ({ src = "", className = "", ...rest }: Props) => {
+const Photo = ({ src = "", className = "", width, height, ...rest }: Props) => {
   /**
    * FIXME
    * storybook 환경에서 이미지가 min height 보다 작을 때
@@ -33,7 +33,10 @@ const Photo = ({ src = "", className = "", ...rest }: Props) => {
         blurDataURL={base64Blur}
         placeholder="blur"
         src={src}
-        style={{ objectFit: "cover" }}
+        style={{
+          objectFit: "cover",
+          ...(width && height && { aspectRatio: `calc(${width} / ${height})` }),
+        }}
         {...rest}
       />
     </div>

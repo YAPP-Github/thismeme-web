@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { Suspense } from "react";
 
 import { useInput, useRecentSearch } from "@/application/hooks";
@@ -10,9 +11,16 @@ import {
 } from "@/components/search";
 
 const SearchPage = () => {
+  const router = useRouter();
   const inputProps = useInput();
   const { keywords, onClickDeleteKeyword, onClickAddKeyword } = useRecentSearch();
 
+  const handleSearchByKeyword = () => {
+    if (!inputProps.value || !inputProps.value.trim()) return;
+
+    onClickAddKeyword(inputProps.value);
+    router.push(`/explore/keywords?q=${inputProps.value}`);
+  };
   return (
     <>
       <Navigation page="search" />
@@ -22,7 +30,7 @@ const SearchPage = () => {
           placeholder="당신이 찾는 밈, 여기 있다."
           spellCheck={false}
           type="text"
-          onClickAddKeyword={onClickAddKeyword}
+          onSearchByKeyword={handleSearchByKeyword}
         />
         <p className="my-16 px-14 text-12-regular-160 text-gray-10">
           밈 제목,태그 설명을 입력하세요

@@ -22,7 +22,12 @@ export class SearchApi {
     return this.api.get(`/tags/search?word=${value}`).then((response) => response.data);
   };
 
-  getSearchResultsByKeyword = ({
+  /**
+   * NOTE
+   * 서버 응답 변환(transformation) 위치
+   * 1.
+   */
+  getSearchResultsByKeyword = async ({
     keyword,
     offset,
     limit,
@@ -31,18 +36,24 @@ export class SearchApi {
     offset: number;
     limit: number;
   }) => {
-    return this.api
-      .get("/search", {
-        params: {
-          keyword,
-          offset,
-          limit,
-        },
-      })
-      .then((response) => response.data);
+    const { data } = await this.api.get("/search", {
+      params: {
+        keyword,
+        offset,
+        limit,
+      },
+    });
+    const result = {
+      data: data.memes,
+      pageNumber: offset,
+      pageSize: limit,
+      isLastPage: data.memes.length < limit,
+      isFirstPage: offset === 0,
+    };
+    return result;
   };
 
-  getSearchResultsByTag = ({
+  getSearchResultsByTag = async ({
     keyword,
     offset,
     limit,
@@ -51,14 +62,20 @@ export class SearchApi {
     offset: number;
     limit: number;
   }) => {
-    return this.api
-      .get("/search/tag", {
-        params: {
-          keyword,
-          offset,
-          limit,
-        },
-      })
-      .then((response) => response.data);
+    const { data } = await this.api.get("/search/tag", {
+      params: {
+        keyword,
+        offset,
+        limit,
+      },
+    });
+    const result = {
+      data: data.memes,
+      pageNumber: offset,
+      pageSize: limit,
+      isLastPage: data.memes.length < limit,
+      isFirstPage: offset === 0,
+    };
+    return result;
   };
 }

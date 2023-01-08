@@ -1,4 +1,4 @@
-import { axiosBasic } from "@/infra/api/client";
+import { axiosBasic, axiosSearchBasic } from "@/infra/api/client";
 import { MemeApi } from "@/infra/api/meme";
 
 import { SearchApi } from "./search";
@@ -16,7 +16,7 @@ import { TagApi } from "./tags";
  *  3. 응답 에러 핸들링
  */
 export const api = {
-  search: new SearchApi(axiosBasic),
+  search: new SearchApi(axiosSearchBasic),
   meme: new MemeApi(axiosBasic),
   tags: new TagApi(axiosBasic),
 };

@@ -5,10 +5,10 @@ import { InputBase } from "@/components/common/Input";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   onReset?: () => void;
-  onClickAddKeyword?: (text: string) => void;
+  onSearchByKeyword?: () => void;
 }
 
-export const SearchInput = ({ onReset, onClickAddKeyword, value, ...rest }: Props) => {
+export const SearchInput = ({ onReset, onSearchByKeyword, value, ...rest }: Props) => {
   return (
     <div className="relative flex items-center justify-start">
       <InputBase
@@ -17,12 +17,12 @@ export const SearchInput = ({ onReset, onClickAddKeyword, value, ...rest }: Prop
         {...rest}
         endComponents={
           <>
-            <Icon className="absolute right-46" name="delete" onClick={onReset} />
+            <Icon className="absolute right-46 cursor-pointer" name="delete" onClick={onReset} />
             <Icon
-              className="absolute right-16"
+              className="absolute right-16 cursor-pointer"
               name="search"
               onClick={() => {
-                onClickAddKeyword?.(value as string);
+                onSearchByKeyword?.();
               }}
             />
           </>

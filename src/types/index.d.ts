@@ -17,20 +17,23 @@ export interface PaginationResponse<T> {
   isLastPage: boolean;
   isFirstPage: boolean;
 }
-/**
- * FIX camel-case로 변환하는 API 스키마 필요
- */
-export interface SearchResult {
-  id: number;
-  title: string;
-  image_url: string;
-  image_width: number;
-  image_height: number;
-  tags: string[];
-  view_count: number;
-  share_count: number;
-  create_date: string;
-  modified_date: string;
+
+export interface SearchItem {
+  memeId: number;
+  name: string;
+  image: {
+    images: {
+      imageId: number;
+      imageUrl: string;
+      imageWidth: number;
+      imageHeight: number;
+    }[];
+    count: number;
+  };
+  viewCount: number;
+  shareCount: number;
+  createdDate: string;
+  modifiedDate: string;
 }
 
 export interface Meme {

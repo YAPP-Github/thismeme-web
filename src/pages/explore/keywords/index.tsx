@@ -25,7 +25,7 @@ const ExploreWordsPage: NextPage = () => {
       <Navigation page="result" title={query.q} />
       <Masonry columns={2} defaultColumns={2} defaultHeight={450} defaultSpacing={9} spacing={9}>
         {memeList.map((meme) => {
-          return <MemeItem key={meme.id} meme={meme} />;
+          return <MemeItem key={meme.memeId} meme={meme} />;
         })}
       </Masonry>
       <div className="m-10" ref={ref}></div>
