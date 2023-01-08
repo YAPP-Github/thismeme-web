@@ -1,6 +1,5 @@
-import { useSearchResult } from "@/application/hooks";
-
-import { SearchItem } from "../SearchItem/SearchItem";
+import { useGetTagSearch } from "@/application/hooks";
+import { SearchItem } from "@/components/search";
 
 interface Prop {
   value: string;
@@ -8,7 +7,7 @@ interface Prop {
 }
 
 export const SearchResultList = ({ value, onClickAddKeyword }: Prop) => {
-  const { searchResults } = useSearchResult(value.trim());
+  const { searchResults } = useGetTagSearch(value.trim());
 
   if (!value || searchResults?.length === 0) {
     return null;

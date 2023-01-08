@@ -1,4 +1,3 @@
-import { css } from "@emotion/react";
 import Image from "next/image";
 import type { ComponentProps } from "react";
 
@@ -31,13 +30,7 @@ const Photo = ({ src = "", className = "", width, height, ...rest }: Props) => {
   return (
     <div
       className={`relative overflow-hidden bg-gray-100 [&>img]:!static ${className}`}
-      css={
-        width &&
-        height &&
-        css`
-          aspect-ratio: ${width / height};
-        `
-      }
+      css={[width && height && { aspectRatio: `calc(${width} / ${height})` }]}
     >
       <Image
         fill
@@ -47,7 +40,6 @@ const Photo = ({ src = "", className = "", width, height, ...rest }: Props) => {
         src={src}
         style={{
           objectFit: "cover",
-          ...(width && height && { aspectRatio: `calc(${width} / ${height})` }),
         }}
         {...rest}
       />
