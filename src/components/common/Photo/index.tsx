@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import Image from "next/image";
 import type { ComponentProps } from "react";
 
@@ -9,6 +10,8 @@ import type { ComponentProps } from "react";
  */
 interface Props extends Omit<ComponentProps<"img">, "alt" | "placeholder"> {
   src?: string;
+  width?: number;
+  height?: number;
 }
 
 const base64Blur =
@@ -26,7 +29,16 @@ const Photo = ({ src = "", className = "", width, height, ...rest }: Props) => {
    * - layout shift 방지
    */
   return (
-    <div className={`relative overflow-hidden bg-gray-300 [&>img]:!static ${className}`}>
+    <div
+      className={`relative overflow-hidden bg-gray-100 [&>img]:!static ${className}`}
+      css={
+        width &&
+        height &&
+        css`
+          aspect-ratio: ${width / height};
+        `
+      }
+    >
       <Image
         fill
         alt="thumbnail"
