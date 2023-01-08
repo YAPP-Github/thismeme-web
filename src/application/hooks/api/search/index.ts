@@ -20,8 +20,8 @@ export const useGetSearchResultsByKeyword = (keyword: string) => {
     suspense: false,
     enabled: !!keyword,
     getNextPageParam: (lastPage) => {
-      const { isLastPage, pageNumber } = lastPage;
-      return isLastPage ? undefined : pageNumber + 1;
+      const { isLastPage, pageNumber, pageSize } = lastPage;
+      return isLastPage ? undefined : pageNumber + pageSize;
     },
   });
 };
@@ -41,8 +41,8 @@ export const useGetSearchResultsByTag = (tag: string) => {
     suspense: false,
     enabled: !!tag,
     getNextPageParam: (lastPage) => {
-      const { isLastPage, pageNumber } = lastPage;
-      return isLastPage ? undefined : pageNumber + 1;
+      const { isLastPage, pageNumber, pageSize } = lastPage;
+      return isLastPage ? undefined : pageNumber + pageSize;
     },
   });
 };
