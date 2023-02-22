@@ -26,7 +26,7 @@ export const MemesByKeyword = ({ searchQuery }: Props) => {
       ]}
     >
       <MemeLongPressContainer memeList={memeList}>
-        <InfiniteMemeList memeList={memeList} onEndReached={fetchNextPage} />
+        <InfiniteMemeList memeList={memeList} rootMargin="500% 0px" onEndReached={fetchNextPage} />
       </MemeLongPressContainer>
     </div>
   );

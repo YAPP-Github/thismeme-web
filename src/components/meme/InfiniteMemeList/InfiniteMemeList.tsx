@@ -6,10 +6,19 @@ import type { Meme } from "@/types";
 interface Props {
   memeList: Meme[];
   onEndReached: () => void;
+  root?: IntersectionObserverInit["root"];
+  rootMargin?: IntersectionObserverInit["rootMargin"];
+  threshold?: IntersectionObserverInit["threshold"];
 }
 
-export const InfiniteMemeList = ({ memeList, onEndReached }: Props) => {
-  const ref = useIntersect(onEndReached);
+export const InfiniteMemeList = ({
+  memeList,
+  onEndReached,
+  root,
+  rootMargin,
+  threshold,
+}: Props) => {
+  const ref = useIntersect(onEndReached, { root, rootMargin, threshold });
 
   return (
     <>
