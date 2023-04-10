@@ -1,5 +1,5 @@
 # [🔗thismeme.team](https://github.com/thismeme-team/thismeme-web)로 현재 레포를 옮겼습니다.
-작업 진행 상황을 확인하실려면 [🔗링크](https://github.com/slamapp/client)을 클릭해 주세요!
+작업 진행 상황을 확인하실려면 [🔗링크](https://github.com/thismeme-team/thismeme-web)을 클릭해 주세요!
 
 ![home](https://user-images.githubusercontent.com/33178048/221388037-cb94a3f1-386b-4b0f-adf6-8fea5b3f042b.png)
 
