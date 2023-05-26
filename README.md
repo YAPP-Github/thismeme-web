@@ -9,7 +9,7 @@
 
 ⬇️ ⬇️ ⬇️ (모바일로 구경하는걸 추천해요 🙂)
 
-[당신이 찾는 '그 밈'](https://app.thismeme.me/)
+[당신이 찾는 '그 밈'](https://app.thismeme.me/?utm_source=github&utm_medium=social&utm_campaign=personal)
 
 <br />
 
